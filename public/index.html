@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>DocDoor — Premium Medical Concierge</title>
+  <meta name="description" content="DocDoor - Eve doktor çağırma platformu">
+  <meta name="theme-color" content="#0d9488">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{overflow-x:hidden}
+    #root{min-height:100vh}
+    .dd-loading{display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f8fafc;font-family:system-ui}
+    .dd-loading-inner{text-align:center}
+    .dd-loading-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#0d9488,#6366f1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px}
+    .dd-loading-text{font-size:14px;color:#64748b;font-weight:600}
+    .dd-loading-error{margin-top:12px;color:#ef4444;font-size:13px;max-width:400px;word-break:break-all}
+  </style>
+</head>
+<body>
+<div id="root">
+  <div class="dd-loading">
+    <div class="dd-loading-inner">
+      <div class="dd-loading-icon">🩺</div>
+      <div class="dd-loading-text">Loading DocDoor...</div>
+      <div id="load-error" class="dd-loading-error"></div>
+    </div>
+  </div>
+</div>
+<script>
+  // Show errors if app fails to load
+  window.onerror = function(msg, src, line) {
+    var el = document.getElementById('load-error');
+    if (el) el.textContent = 'Error: ' + msg + ' (line ' + line + ')';
+  };
+</script>
+<script src="/app.js"></script>
+</body>
+</html>

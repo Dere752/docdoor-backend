@@ -1,0 +1,4 @@
+node_modules/
+docdoor.db
+.env
+public/app.js

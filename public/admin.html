@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DocDoor Admin Panel</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0f172a;--surface:#1e293b;--card:#334155;--border:#475569;--text:#f1f5f9;--muted:#94a3b8;--accent:#3b82f6;--green:#22c55e;--red:#ef4444;--orange:#f59e0b;--purple:#a855f7}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.login-wrap{display:flex;align-items:center;justify-content:center;min-height:100vh}
+.login-box{background:var(--surface);border-radius:16px;padding:48px;width:400px;max-width:90vw;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.login-box h1{font-size:28px;margin-bottom:8px;background:linear-gradient(135deg,var(--accent),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.login-box p{color:var(--muted);margin-bottom:32px;font-size:14px}
+input,select,textarea{width:100%;padding:12px 16px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:14px;outline:none;transition:.2s}
+input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,.2)}
+.btn{padding:12px 24px;border:none;border-radius:10px;cursor:pointer;font-weight:600;font-size:14px;transition:all .2s}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:#2563eb;transform:translateY(-1px)}
+.btn-danger{background:var(--red);color:#fff}.btn-danger:hover{background:#dc2626}
+.btn-sm{padding:6px 12px;font-size:12px;border-radius:6px}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px;margin-top:16px}
+.app{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+.sidebar{background:var(--surface);padding:24px 16px;border-right:1px solid var(--border);position:sticky;top:0;height:100vh;overflow-y:auto}
+.sidebar h2{font-size:20px;padding:0 8px 20px;border-bottom:1px solid var(--border);margin-bottom:16px;background:linear-gradient(135deg,var(--accent),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;cursor:pointer;color:var(--muted);font-size:14px;transition:.2s;margin-bottom:2px}
+.nav-item:hover{background:var(--card);color:var(--text)}
+.nav-item.active{background:var(--accent);color:#fff}
+.main{padding:28px;overflow-y:auto}
+.page-title{font-size:24px;font-weight:700;margin-bottom:24px}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:28px}
+.stat-card{background:var(--surface);border-radius:14px;padding:20px;border:1px solid var(--border);transition:.2s}
+.stat-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.stat-card .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.stat-card .value{font-size:28px;font-weight:800;margin-top:6px}
+.stat-card .sub{font-size:12px;color:var(--muted);margin-top:4px}
+table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:12px;overflow:hidden}
+th{background:var(--card);padding:12px 16px;text-align:left;font-size:12px;text-transform:uppercase;color:var(--muted);letter-spacing:.05em}
+td{padding:10px 16px;border-top:1px solid var(--border);font-size:13px}
+tr:hover td{background:rgba(59,130,246,.05)}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.badge-green{background:rgba(34,197,94,.15);color:var(--green)}
+.badge-red{background:rgba(239,68,68,.15);color:var(--red)}
+.badge-orange{background:rgba(245,158,11,.15);color:var(--orange)}
+.badge-blue{background:rgba(59,130,246,.15);color:var(--accent)}
+.badge-purple{background:rgba(168,85,247,.15);color:var(--purple)}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:1000;backdrop-filter:blur(4px)}
+.modal{background:var(--surface);border-radius:16px;padding:32px;width:500px;max-width:90vw;max-height:80vh;overflow-y:auto;border:1px solid var(--border)}
+.modal h3{font-size:20px;margin-bottom:20px}
+.flex{display:flex;gap:12px;align-items:center}
+.ml-auto{margin-left:auto}
+.mb-16{margin-bottom:16px}.mt-16{margin-top:16px}
+.text-green{color:var(--green)}.text-red{color:var(--red)}.text-muted{color:var(--muted)}
+.search-bar{display:flex;gap:12px;margin-bottom:20px}
+.search-bar input{flex:1}
+.tab-bar{display:flex;gap:4px;margin-bottom:20px;background:var(--surface);padding:4px;border-radius:12px;border:1px solid var(--border)}
+.tab{padding:8px 16px;border-radius:8px;cursor:pointer;font-size:13px;color:var(--muted);transition:.2s}
+.tab.active{background:var(--accent);color:#fff}
+.empty{text-align:center;padding:60px;color:var(--muted)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.fade-in{animation:fadeIn .3s ease-out}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.loading{animation:pulse 1.5s infinite}
+@media(max-width:768px){.app{grid-template-columns:1fr}.sidebar{display:none}.stats-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+const API = '/api/admin';
+let token = localStorage.getItem('admin_token');
+let currentPage = 'dashboard';
+let dashData = null;
+let usersData = null;
+let paymentsData = null;
+let claimsData = null;
+let complaintsData = null;
+let settingsData = null;
+let auditData = null;
+let payoutsData = null;
+
+function h(tag, props, ...children) {
+  const el = document.createElement(tag);
+  if (props) Object.entries(props).forEach(([k,v]) => {
+    if (k === 'style' && typeof v === 'object') Object.assign(el.style, v);
+    else if (k.startsWith('on')) el.addEventListener(k.slice(2).toLowerCase(), v);
+    else if (k === 'className') el.className = v;
+    else if (k === 'innerHTML') el.innerHTML = v;
+    else el.setAttribute(k, v);
+  });
+  children.flat(9).forEach(c => { if (c != null) el.append(typeof c === 'string' ? document.createTextNode(c) : c); });
+  return el;
+}
+
+async function api(path, opts = {}) {
+  const res = await fetch(API + path, {
+    ...opts, headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token, ...opts.headers },
+    body: opts.body ? JSON.stringify(opts.body) : undefined,
+  });
+  if (res.status === 401) { token = null; localStorage.removeItem('admin_token'); render(); return null; }
+  return res.json();
+}
+
+function fmtDate(ts) { if (!ts) return '—'; const d = new Date(ts); return d.toLocaleDateString('tr-TR') + ' ' + d.toLocaleTimeString('tr-TR', {hour:'2-digit',minute:'2-digit'}); }
+function fmtMoney(n) { return '₺' + (Number(n)||0).toLocaleString('tr-TR', {minimumFractionDigits:2}); }
+function badge(text, type) { return h('span', {className:'badge badge-'+type}, text); }
+
+// ═══ LOGIN ═══
+function renderLogin() {
+  let email = '', pass = '', err = '', loading = false;
+  const root = document.getElementById('root');
+  root.innerHTML = '';
+  const errEl = h('div', {style:{color:'var(--red)',fontSize:'13px',minHeight:'20px',marginBottom:'12px'}});
+  const btn = h('button', {className:'btn btn-primary',style:{width:'100%',marginTop:'12px'},onClick:async()=>{
+    if(loading)return; loading=true; btn.textContent='Giriş yapılıyor...'; btn.disabled=true;
+    try{
+      const r=await fetch(API+'/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password:pass})});
+      const d=await r.json();
+      if(r.ok){token=d.token;localStorage.setItem('admin_token',token);render();}
+      else{errEl.textContent=d.error||'Giriş başarısız';}
+    }catch{errEl.textContent='Bağlantı hatası';}
+    loading=false;btn.textContent='Giriş Yap';btn.disabled=false;
+  }}, 'Giriş Yap');
+  root.append(h('div',{className:'login-wrap'},
+    h('div',{className:'login-box fade-in'},
+      h('h1',{},'🩺 DocDoor'),
+      h('p',{},'Admin Panel — Yetkisiz erişim yasaktır'),
+      h('label',{},'Email'), h('input',{type:'email',placeholder:'admin@docdoor.com',onInput:e=>email=e.target.value}),
+      h('label',{},'Şifre'), h('input',{type:'password',placeholder:'••••••••',onInput:e=>pass=e.target.value,onKeydown:e=>{if(e.key==='Enter')btn.click()}}),
+      errEl, btn
+    )
+  ));
+}
+
+// ═══ DASHBOARD ═══
+async function renderDashboard(main) {
+  main.innerHTML = '<div class="loading" style="padding:40px;text-align:center">Yükleniyor...</div>';
+  dashData = await api('/dashboard');
+  if (!dashData) return;
+  const s = dashData.stats;
+  main.innerHTML = '';
+  main.append(h('div',{className:'page-title'},'📊 Dashboard'));
+  const grid = h('div',{className:'stats-grid'});
+  const cards = [
+    ['Toplam Hasta', s.totalUsers, '👥', ''],
+    ['Toplam Doktor', s.totalDocs, '🩺', ''],
+    ['Bugünkü Randevular', s.todayVisits, '📅', 'Bu hafta: '+s.weekVisits],
+    ['Aktif Ziyaretler', s.activeVisits, '🔴', 'Toplam: '+s.totalVisits],
+    ['Toplam Gelir', fmtMoney(s.totalRevenue), '💰', 'Bugün: '+fmtMoney(s.todayRevenue)],
+    ['Aylık Gelir', fmtMoney(s.monthRevenue), '📈', ''],
+    ['Platform Komisyonu', fmtMoney(s.totalCommission), '🏦', ''],
+    ['Sigorta Talepleri', s.insuranceClaims, '🏥', 'Onaylı: '+s.approvedClaims+' | '+fmtMoney(s.totalClaimAmount)],
+    ['Açık Şikayetler', s.openComplaints, '⚠️', ''],
+    ['Engelli Kullanıcı', s.blockedUsers, '🚫', ''],
+  ];
+  cards.forEach(([label,value,icon,sub])=>{
+    grid.append(h('div',{className:'stat-card fade-in'},
+      h('div',{className:'label'},icon+' '+label),
+      h('div',{className:'value'},String(value)),
+      sub?h('div',{className:'sub'},sub):null
+    ));
+  });
+  main.append(grid);
+
+  // Recent visits table
+  main.append(h('h3',{style:{marginBottom:'12px'}},'Son Randevular'));
+  const tbl = h('table',{});
+  tbl.append(h('thead',{},h('tr',{},
+    ...['ID','Hasta','Doktor','Durum','Fiyat','Ödeme','Tarih'].map(t=>h('th',{},t))
+  )));
+  const tbody = h('tbody',{});
+  (dashData.recentVisits||[]).forEach(v=>{
+    const statusBadge = {pending:'orange',upcoming:'blue',active:'purple',completed:'green',cancelled:'red'}[v.status]||'blue';
+    const payBadge = {captured:'green',provisioned:'orange',refunded:'red',none:'blue'}[v.paymentStatus]||'blue';
+    tbody.append(h('tr',{},
+      h('td',{},v.id.slice(0,10)),h('td',{},v.patient||'—'),h('td',{},v.doctor||'—'),
+      h('td',{},badge(v.status,statusBadge)),h('td',{},fmtMoney(v.price)),
+      h('td',{},badge(v.paymentStatus||'none',payBadge)),h('td',{},fmtDate(v.createdAt))
+    ));
+  });
+  tbl.append(tbody);
+  main.append(tbl);
+
+  // Demographics section
+  const demo = dashData.demographics;
+  if(demo){
+    main.append(h('h3',{style:{marginBottom:'12px',marginTop:'24px'}},'📊 Demografi'));
+    const demoGrid = h('div',{className:'stat-grid'});
+    demoGrid.append(h('div',{className:'stat-card fade-in'},
+      h('div',{className:'label'},'📅 Ortalama Yaş'),
+      h('div',{className:'value'},String(demo.avgAge||'—')),
+      h('div',{className:'sub'},'Toplam: '+demo.totalWithAge+' kullanıcı')
+    ));
+    const ageDiv = h('div',{className:'stat-card fade-in',style:{gridColumn:'span 2'}},
+      h('div',{className:'label'},'👥 Yaş Grupları')
+    );
+    if(demo.ageGroups){
+      const ageBar = h('div',{style:{display:'flex',flexDirection:'column',gap:'6px',marginTop:'8px'}});
+      Object.entries(demo.ageGroups).forEach(([group,count])=>{
+        const pct = demo.totalWithAge>0 ? Math.round(count/demo.totalWithAge*100) : 0;
+        ageBar.append(h('div',{style:{display:'flex',alignItems:'center',gap:'8px'}},
+          h('span',{style:{width:'50px',fontSize:'12px',fontWeight:'700',color:'#94a3b8'}},group),
+          h('div',{style:{flex:1,height:'16px',borderRadius:'8px',background:'#1e293b',overflow:'hidden'}},
+            h('div',{style:{width:pct+'%',height:'100%',borderRadius:'8px',background:'linear-gradient(90deg,#0d9488,#14b8a6)',transition:'width .5s'}})
+          ),
+          h('span',{style:{fontSize:'11px',fontWeight:'600',color:'#64748b',minWidth:'40px',textAlign:'right'}},count+' (%'+pct+')')
+        ));
+      });
+      ageDiv.append(ageBar);
+    }
+    demoGrid.append(ageDiv);
+    main.append(demoGrid);
+    if(demo.countries&&demo.countries.length>0){
+      main.append(h('h3',{style:{marginBottom:'12px',marginTop:'16px'}},'🌍 Ülkelere Göre'));
+      const cBar = h('div',{style:{display:'flex',flexDirection:'column',gap:'6px'}});
+      const totalC = demo.countries.reduce((s,c)=>s+c.c,0);
+      demo.countries.forEach(c=>{
+        const pct = totalC>0 ? Math.round(c.c/totalC*100) : 0;
+        cBar.append(h('div',{style:{display:'flex',alignItems:'center',gap:'8px'}},
+          h('span',{style:{width:'90px',fontSize:'12px',fontWeight:'700',color:'#94a3b8',textAlign:'right'}},c.country||'Belirtilmemiş'),
+          h('div',{style:{flex:1,height:'18px',borderRadius:'9px',background:'#1e293b',overflow:'hidden'}},
+            h('div',{style:{width:Math.max(pct,2)+'%',height:'100%',borderRadius:'9px',background:'linear-gradient(90deg,#3b82f6,#60a5fa)',transition:'width .5s'}})
+          ),
+          h('span',{style:{fontSize:'11px',fontWeight:'700',color:'#64748b',minWidth:'60px',textAlign:'right'}},c.c+' (%'+pct+')')
+        ));
+      });
+      main.append(cBar);
+    }
+    if(demo.provinces&&demo.provinces.length>0){
+      const provHeader = h('div',{style:{display:'flex',justifyContent:'space-between',alignItems:'center',marginTop:'16px',marginBottom:'12px'}});
+      provHeader.append(h('h3',{style:{margin:0}},'🏙️ Şehirlere Göre Kullanıcılar'));
+      let provSort = 'count'; // count | name
+      const provContainer = h('div',{});
+      function drawProvinces(){
+        provContainer.innerHTML='';
+        let sorted = [...demo.provinces];
+        if(provSort==='name') sorted.sort((a,b)=>(a.province||'').localeCompare(b.province||''));
+        else sorted.sort((a,b)=>b.c-a.c);
+        const totalP = sorted.reduce((s,p)=>s+p.c,0);
+        sorted.slice(0,15).forEach((p,i)=>{
+          const pct = totalP>0 ? Math.round(p.c/totalP*100) : 0;
+          const colors = ['#0d9488','#14b8a6','#2dd4bf','#5eead4','#99f6e4'];
+          const col = colors[Math.min(i,colors.length-1)];
+          provContainer.append(h('div',{style:{display:'flex',alignItems:'center',gap:'8px',marginBottom:'6px'}},
+            h('span',{style:{width:'24px',fontSize:'11px',fontWeight:'800',color:'#475569',textAlign:'right'}},String(i+1)),
+            h('span',{style:{width:'110px',fontSize:'12px',fontWeight:'700',color:'#e2e8f0',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}},p.province||'—'),
+            h('div',{style:{flex:1,height:'20px',borderRadius:'10px',background:'#1e293b',overflow:'hidden'}},
+              h('div',{style:{width:Math.max(pct,3)+'%',height:'100%',borderRadius:'10px',background:'linear-gradient(90deg,'+col+','+col+'88)',transition:'width .5s'}})
+            ),
+            h('span',{style:{fontSize:'12px',fontWeight:'800',color:col,minWidth:'60px',textAlign:'right'}},p.c+' kişi'),
+            h('span',{style:{fontSize:'10px',color:'#64748b',minWidth:'35px',textAlign:'right'}},'%'+pct)
+          ));
+        });
+      }
+      const sortBtns = h('div',{style:{display:'flex',gap:'4px'}});
+      const btnStyle = (active)=>({padding:'4px 10px',borderRadius:'6px',fontSize:'10px',fontWeight:'700',border:'1px solid '+(active?'#0d9488':'#334155'),background:active?'#0d948822':'transparent',color:active?'#14b8a6':'#94a3b8',cursor:'pointer'});
+      const btnCount = h('button',{style:btnStyle(true),onClick:()=>{provSort='count';btnCount.style.borderColor='#0d9488';btnCount.style.color='#14b8a6';btnCount.style.background='#0d948822';btnName.style.borderColor='#334155';btnName.style.color='#94a3b8';btnName.style.background='transparent';drawProvinces();}},'En Çok → Az');
+      const btnName = h('button',{style:btnStyle(false),onClick:()=>{provSort='name';btnName.style.borderColor='#0d9488';btnName.style.color='#14b8a6';btnName.style.background='#0d948822';btnCount.style.borderColor='#334155';btnCount.style.color='#94a3b8';btnCount.style.background='transparent';drawProvinces();}},'A → Z');
+      sortBtns.append(btnCount,btnName);
+      provHeader.append(sortBtns);
+      main.append(provHeader);
+      drawProvinces();
+      main.append(provContainer);
+    }
+  }
+}
+
+// ═══ USERS ═══
+async function renderUsers(main) {
+  main.innerHTML='<div class="loading" style="padding:40px;text-align:center">Yükleniyor...</div>';
+  let role='',search='';
+  async function load(){
+    usersData=await api('/users?role='+role+'&search='+encodeURIComponent(search));
+    draw();
+  }
+  function draw(){
+    main.innerHTML='';
+    main.append(h('div',{className:'page-title'},'👥 Kullanıcı Yönetimi ('+((usersData||{}).total||0)+')'));
+    const bar=h('div',{className:'search-bar'});
+    bar.append(h('input',{placeholder:'Kullanıcı ID ile ara (örn: P1abc, D2xyz)...',value:search,onInput:e=>{search=e.target.value}}));
+    bar.append(h('select',{onInput:e=>{role=e.target.value;load()},style:{width:'160px'}},
+      h('option',{value:''},'Tümü'),h('option',{value:'patient'},'Hastalar'),h('option',{value:'doctor'},'Doktorlar')
+    ));
+    bar.append(h('button',{className:'btn btn-primary btn-sm',onClick:load},'Ara'));
+    main.append(bar);
+    if(!usersData||!usersData.users){main.append(h('div',{className:'empty'},'Veri yüklenemedi'));return;}
+    const tbl=h('table',{});
+    tbl.append(h('thead',{},h('tr',{},...['ID','İsim','Email','Rol','Telefon','Durum','Kayıt','İşlem'].map(t=>h('th',{},t)))));
+    const tbody=h('tbody',{});
+    usersData.users.forEach(u=>{
+      tbody.append(h('tr',{},
+        h('td',{},u.id),h('td',{},u.first_name+' '+(u.last_name||'')),h('td',{},u.email),
+        h('td',{},badge(u.role,u.role==='doctor'?'purple':'blue')),h('td',{},u.phone||'—'),
+        h('td',{},u.is_blocked?badge('Engelli','red'):badge('Aktif','green')),
+        h('td',{},fmtDate(u.created_at)),
+        h('td',{},
+          h('button',{className:'btn btn-sm '+(u.is_blocked?'btn-primary':'btn-danger'),onClick:async()=>{
+            await api('/users/'+u.id+'/block',{method:'PUT',body:{blocked:!u.is_blocked,reason:'Admin action'}});load();
+          }},u.is_blocked?'Aç':'Engelle')
+        )
+      ));
+    });
+    tbl.append(tbody);
+    main.append(tbl);
+  }
+  await load();
+}
+
+// ═══ PAYMENTS ═══
+async function renderPayments(main){
+  main.innerHTML='<div class="loading" style="padding:40px;text-align:center">Yükleniyor...</div>';
+  paymentsData=await api('/payments');
+  main.innerHTML='';
+  main.append(h('div',{className:'page-title'},'💳 Ödemeler ('+(paymentsData?.total||0)+')'));
+  const tbl=h('table',{});
+  tbl.append(h('thead',{},h('tr',{},...['ID','Hasta','Tutar','Durum','Komisyon','Doktor Payı','Kart','Tarih'].map(t=>h('th',{},t)))));
+  const tbody=h('tbody',{});
+  (paymentsData?.payments||[]).forEach(p=>{
+    const sb={captured:'green',provisioned:'orange',refunded:'red',failed:'red',pending:'blue'}[p.status]||'blue';
+    tbody.append(h('tr',{},
+      h('td',{},p.id.slice(0,12)),h('td',{},p.patient_name||'—'),h('td',{style:{fontWeight:700}},fmtMoney(p.amount)),
+      h('td',{},badge(p.status,sb)),h('td',{},fmtMoney(p.commission_amount)),h('td',{},fmtMoney(p.doctor_payout)),
+      h('td',{},(p.card_brand||'')+' *'+p.card_last4),h('td',{},fmtDate(p.created_at))
+    ));
+  });
+  tbl.append(tbody);
+  main.append(tbl);
+}
+
+// ═══ INSURANCE ═══
+async function renderInsurance(main){
+  main.innerHTML='<div class="loading" style="padding:40px;text-align:center">Yükleniyor...</div>';
+  claimsData=await api('/insurance-claims');
+  main.innerHTML='';
+  main.append(h('div',{className:'page-title'},'🏥 Sigorta Talepleri'));
+  if(!claimsData?.claims?.length){main.append(h('div',{className:'empty'},'Henüz sigorta talebi yok'));return;}
+  const tbl=h('table',{});
+  tbl.append(h('thead',{},h('tr',{},...['ID','Hasta','Sigorta','Talep','Onay','Hasta Payı','Durum','Tarih'].map(t=>h('th',{},t)))));
+  const tbody=h('tbody',{});
+  claimsData.claims.forEach(c=>{
+    const sb={approved:'green',pending:'orange',rejected:'red'}[c.status]||'blue';
+    tbody.append(h('tr',{},
+      h('td',{},c.id.slice(0,12)),h('td',{},c.patient_name||'—'),h('td',{},c.provider_name||'—'),
+      h('td',{},fmtMoney(c.claim_amount)),h('td',{className:'text-green',style:{fontWeight:700}},fmtMoney(c.approved_amount)),
+      h('td',{},fmtMoney(c.patient_copay)),h('td',{},badge(c.status,sb)),h('td',{},fmtDate(c.submitted_at))
+    ));
+  });
+  tbl.append(tbody);
+  main.append(tbl);
+}
+
+// ═══ COMPLAINTS ═══
+async function renderComplaints(main){
+  complaintsData=await api('/complaints');
+  main.innerHTML='';
+  main.append(h('div',{className:'page-title'},'⚠️ Şikayetler'));
+  if(!complaintsData?.complaints?.length){main.append(h('div',{className:'empty'},'Şikayet yok — harika!'));return;}
+  const tbl=h('table',{});
+  tbl.append(h('thead',{},h('tr',{},...['ID','Kullanıcı','Konu','Durum','Öncelik','Tarih','İşlem'].map(t=>h('th',{},t)))));
+  const tbody=h('tbody',{});
+  complaintsData.complaints.forEach(c=>{
+    const sb={open:'orange',investigating:'blue',resolved:'green',closed:'red'}[c.status]||'blue';
+    tbody.append(h('tr',{},
+      h('td',{},c.id.slice(0,10)),h('td',{},c.user_name||'—'),h('td',{},c.subject),
+      h('td',{},badge(c.status,sb)),h('td',{},badge(c.priority,c.priority==='high'?'red':'blue')),
+      h('td',{},fmtDate(c.created_at)),
+      h('td',{},h('button',{className:'btn btn-sm btn-primary',onClick:async()=>{
+        await api('/complaints/'+c.id,{method:'PUT',body:{status:'resolved',adminNotes:'Resolved by admin'}});renderComplaints(main);
+      }},'Çözüldü'))
+    ));
+  });
+  tbl.append(tbody);
+  main.append(tbl);
+}
+
+// ═══ SETTINGS ═══
+async function renderSettings(main){
+  settingsData=await api('/settings');
+  main.innerHTML='';
+  main.append(h('div',{className:'page-title'},'⚙️ Sistem Ayarları'));
+  const s=settingsData?.settings||{};
+  const fields=[
+    ['commission_rate','Komisyon Oranı','0.20'],
+    ['cancellation_hours','İptal Süresi (saat)','12'],
+    ['max_price','Max Seans Fiyatı (₺)','5000'],
+    ['currency','Para Birimi','TRY'],
+    ['insurance_enabled','Sigorta Aktif (0/1)','1'],
+    ['maintenance_mode','Bakım Modu (0/1)','0'],
+  ];
+  const form=h('div',{style:{maxWidth:'600px'}});
+  const vals={...s};
+  fields.forEach(([key,label,def])=>{
+    form.append(h('label',{},label));
+    form.append(h('input',{value:s[key]||def,onInput:e=>vals[key]=e.target.value}));
+  });
+  form.append(h('button',{className:'btn btn-primary',style:{marginTop:'24px'},onClick:async()=>{
+    await api('/settings',{method:'PUT',body:{settings:vals}});
+    alert('Ayarlar kaydedildi');
+  }},'Kaydet'));
+  main.append(form);
+  // Password change section
+  main.append(h('div',{style:{marginTop:'40px',paddingTop:'24px',borderTop:'1px solid var(--border)'}},
+    h('div',{className:'page-title',style:{fontSize:'18px'}},'🔐 Şifre Değiştir')
+  ));
+  const passForm=h('div',{style:{maxWidth:'400px'}});
+  let curPass='',newPass='',newPass2='';
+  passForm.append(h('label',{},'Mevcut Şifre'), h('input',{type:'password',placeholder:'••••••••',onInput:e=>curPass=e.target.value}));
+  passForm.append(h('label',{},'Yeni Şifre (min 8 karakter)'), h('input',{type:'password',placeholder:'••••••••',onInput:e=>newPass=e.target.value}));
+  passForm.append(h('label',{},'Yeni Şifre (tekrar)'), h('input',{type:'password',placeholder:'••••••••',onInput:e=>newPass2=e.target.value}));
+  passForm.append(h('button',{className:'btn btn-danger',style:{marginTop:'16px'},onClick:async()=>{
+    if(!curPass||!newPass){alert('Tüm alanları doldurun');return;}
+    if(newPass.length<8){alert('Şifre en az 8 karakter olmalı');return;}
+    if(newPass!==newPass2){alert('Şifreler eşleşmiyor');return;}
+    const r=await fetch(API+'/change-password',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({currentPassword:curPass,newPassword:newPass})});
+    const d=await r.json();
+    if(d.success){alert('Şifre başarıyla değiştirildi!');renderSettings(main);}else{alert('Hata: '+(d.error||'Bilinmeyen hata'));}
+  }},'Şifreyi Değiştir'));
+  main.append(passForm);
+}
+
+// ═══ AUDIT ═══
+async function renderAudit(main){
+  auditData=await api('/audit?limit=200');
+  main.innerHTML='';
+  main.append(h('div',{className:'page-title'},'📋 Denetim Logu'));
+  const tbl=h('table',{});
+  tbl.append(h('thead',{},h('tr',{},...['Zaman','Aktör','Aksiyon','Hedef','Detay','IP'].map(t=>h('th',{},t)))));
+  const tbody=h('tbody',{});
+  (auditData?.logs||[]).forEach(l=>{
+    let det='';try{det=JSON.stringify(JSON.parse(l.details||'{}'));}catch{det=l.details;}
+    tbody.append(h('tr',{},
+      h('td',{},fmtDate(l.created_at)),h('td',{},l.actor_id),h('td',{},badge(l.action,'blue')),
+      h('td',{},l.target_type+':'+l.target_id),h('td',{style:{maxWidth:'200px',overflow:'hidden',textOverflow:'ellipsis'}},det),
+      h('td',{},l.ip_address)
+    ));
+  });
+  tbl.append(tbody);
+  main.append(tbl);
+}
+
+// ═══ PAYOUTS ═══
+async function renderPayouts(main){
+  payoutsData=await api('/doctor-payouts');
+  main.innerHTML='';
+  main.append(h('div',{className:'page-title'},'🏦 Doktor Ödemeleri'));
+  if(!payoutsData?.payouts?.length){main.append(h('div',{className:'empty'},'Henüz ödeme yok'));return;}
+  const tbl=h('table',{});
+  tbl.append(h('thead',{},h('tr',{},...['ID','Doktor','Tutar','Durum','IBAN','Tarih','İşlem'].map(t=>h('th',{},t)))));
+  const tbody=h('tbody',{});
+  payoutsData.payouts.forEach(p=>{
+    const sb={pending:'orange',completed:'green',failed:'red'}[p.status]||'blue';
+    tbody.append(h('tr',{},
+      h('td',{},p.id),h('td',{},p.doc_name||'—'),h('td',{style:{fontWeight:700}},fmtMoney(p.amount)),
+      h('td',{},badge(p.status,sb)),h('td',{},p.iban||'—'),h('td',{},fmtDate(p.created_at)),
+      h('td',{},p.status==='pending'?h('button',{className:'btn btn-sm btn-primary',onClick:async()=>{
+        await api('/doctor-payouts/'+p.id,{method:'PUT',body:{status:'completed'}});renderPayouts(main);
+      }},'Onayla'):h('span',{},'—'))
+    ));
+  });
+  tbl.append(tbody);
+  main.append(tbl);
+}
+
+// ═══ MAIN RENDER ═══
+function render() {
+  const root = document.getElementById('root');
+  root.innerHTML = '';
+  if (!token) { renderLogin(); return; }
+
+  const pages = [
+    ['dashboard','📊','Dashboard'],['users','👥','Kullanıcılar'],['payments','💳','Ödemeler'],
+    ['insurance','🏥','Sigorta'],['payouts','🏦','Doktor Ödemeleri'],['complaints','⚠️','Şikayetler'],
+    ['settings','⚙️','Ayarlar'],['audit','📋','Denetim Logu'],
+  ];
+
+  const sidebar = h('div',{className:'sidebar'},
+    h('h2',{},'🩺 DocDoor Admin'),
+    ...pages.map(([id,icon,label])=>h('div',{className:'nav-item'+(currentPage===id?' active':''),onClick:()=>{currentPage=id;render();}},icon+' '+label)),
+    h('div',{style:{marginTop:'auto',paddingTop:'20px',borderTop:'1px solid var(--border)',marginTop:'20px'}}),
+    h('div',{className:'nav-item',onClick:()=>{token=null;localStorage.removeItem('admin_token');render();}},'🚪 Çıkış')
+  );
+
+  const main = h('div',{className:'main'});
+  const app = h('div',{className:'app'}, sidebar, main);
+  root.append(app);
+
+  // Load page
+  const loaders = {dashboard:renderDashboard,users:renderUsers,payments:renderPayments,insurance:renderInsurance,payouts:renderPayouts,complaints:renderComplaints,settings:renderSettings,audit:renderAudit};
+  (loaders[currentPage]||renderDashboard)(main);
+}
+
+render();
+// Auto-refresh dashboard every 30s
+setInterval(()=>{if(currentPage==='dashboard'&&token){const m=document.querySelector('.main');if(m)renderDashboard(m);}},30000);
+</script>
+</body>
+</html>
