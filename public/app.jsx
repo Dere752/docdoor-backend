@@ -275,7 +275,135 @@ const TR = {
   price: { en: 'Price', tr: 'Fiyat', es: 'Precio', de: 'Preis' },
   reviews: { en: 'Reviews', tr: 'Yorumlar', es: 'Reseñas', de: 'Bewertungen' },
   rate_visit: { en: 'Rate your visit', tr: 'Ziyareti değerlendir', es: 'Califique su visita', de: 'Bewerten Sie den Besuch' },
+  // Home
+  what_care_home: { en: 'What kind of care do you need?', tr: 'Ne tür bir bakıma ihtiyacınız var?', es: '¿Qué tipo de atención necesita?', de: 'Welche Behandlung benötigen Sie?' },
+  what_care_sub: { en: 'Select the option that best describes your situation.', tr: 'Durumunuzu en iyi anlatan seçeneği seçin.', es: 'Seleccione la opción que mejor describe su situación.', de: 'Wählen Sie die passende Option.' },
+  greeting_morning: { en: 'Good morning', tr: 'Günaydın', es: 'Buenos días', de: 'Guten Morgen' },
+  greeting_afternoon: { en: 'Good afternoon', tr: 'İyi öğleden sonralar', es: 'Buenas tardes', de: 'Guten Tag' },
+  greeting_evening: { en: 'Good evening', tr: 'İyi akşamlar', es: 'Buenas noches', de: 'Guten Abend' },
+  appt_awaiting: { en: 'Awaiting Doctor Approval...', tr: 'Doktor Onayı Bekleniyor...', es: 'Esperando aprobación del médico...', de: 'Warte auf Arztbestätigung...' },
+  appt_confirmed_label: { en: 'Confirmed Appointment', tr: 'Onaylanmış Randevu', es: 'Cita Confirmada', de: 'Bestätigter Termin' },
+  status_pending: { en: 'Pending', tr: 'Bekliyor', es: 'Pendiente', de: 'Ausstehend' },
+  status_confirmed: { en: 'Confirmed', tr: 'Onaylandı', es: 'Confirmado', de: 'Bestätigt' },
+  appt_details: { en: 'Appointment Details', tr: 'Randevu Detayları', es: 'Detalles de la Cita', de: 'Termindetails' },
+  close: { en: 'Close', tr: 'Kapat', es: 'Cerrar', de: 'Schließen' },
+  doctor_label: { en: 'Doctor', tr: 'Doktor', es: 'Doctor', de: 'Arzt' },
+  status_label: { en: 'Status', tr: 'Durum', es: 'Estado', de: 'Status' },
+  date_time: { en: 'Date & Time', tr: 'Tarih & Saat', es: 'Fecha y Hora', de: 'Datum & Uhrzeit' },
+  location: { en: 'Location', tr: 'Konum', es: 'Ubicación', de: 'Standort' },
+  apartment: { en: 'Apartment', tr: 'Daire', es: 'Apartamento', de: 'Wohnung' },
+  symptoms_label: { en: 'Symptoms', tr: 'Semptomlar', es: 'Síntomas', de: 'Symptome' },
+  general_visit: { en: 'General visit', tr: 'Genel muayene', es: 'Visita general', de: 'Allgemeine Untersuchung' },
+  not_specified: { en: 'Not specified', tr: 'Belirtilmedi', es: 'No especificado', de: 'Nicht angegeben' },
+  todays_meds: { en: "Today's Medicines", tr: 'Bugünkü İlaçlar', es: 'Medicamentos de Hoy', de: 'Heutige Medikamente' },
+  routine_desc_home: { en: 'Schedule a checkup, follow-up, or specialist appointment.', tr: 'Genel kontrol, takip muayenesi veya uzman doktor randevusu.', es: 'Programe un chequeo, seguimiento o cita con especialista.', de: 'Allgemeine Kontrolle, Nachsorge oder Facharzttermin.' },
+  see_doctors: { en: 'See Doctors', tr: 'Doktorları Gör', es: 'Ver Doctores', de: 'Ärzte ansehen' },
+  fav_doctors_title: { en: 'Favorite Doctors', tr: 'Favori Doktorlar', es: 'Médicos Favoritos', de: 'Lieblingsärzte' },
+  recent_visits_title: { en: 'Recent Visits', tr: 'Son Ziyaretler', es: 'Visitas Recientes', de: 'Letzte Besuche' },
+  summary_badge: { en: 'Summary', tr: 'Özet', es: 'Resumen', de: 'Zusammenfassung' },
+  new_badge: { en: 'New', tr: 'Yeni', es: 'Nuevo', de: 'Neu' },
+  safe_tagline: { en: 'DocDoor — Trusted and fast healthcare service.', tr: 'DocDoor — Güvenli ve hızlı sağlık hizmeti aracılığı.', es: 'DocDoor — Servicio médico rápido y confiable.', de: 'DocDoor — Schneller und sicherer Gesundheitsservice.' },
+  // Doctors list
+  sort_best: { en: '⭐ Best rated', tr: '⭐ En iyi puanlı', es: '⭐ Mejor valorado', de: '⭐ Bestbewertet' },
+  sort_price: { en: '💰 Lowest price', tr: '💰 En düşük fiyat', es: '💰 Precio más bajo', de: '💰 Günstigster Preis' },
+  sort_nearest: { en: '⏱ Nearest', tr: '⏱ En yakın', es: '⏱ Más cercano', de: '⏱ Nächster' },
+  reviews_count: { en: 'reviews', tr: 'yorum', es: 'reseñas', de: 'Bewertungen' },
+  no_doctors: { en: 'No doctors available yet', tr: 'Henüz kayıtlı doktor yok', es: 'Aún no hay médicos disponibles', de: 'Noch keine Ärzte verfügbar' },
+  no_doctors_desc: { en: 'Doctors will appear here once they create an account and sign up as a doctor.', tr: 'Doktorlar hesap oluşturup kaydolunca burada görünecek.', es: 'Los médicos aparecerán aquí una vez que creen una cuenta.', de: 'Ärzte erscheinen hier, sobald sie ein Konto erstellt haben.' },
+  // Doctor detail
+  per_visit: { en: 'per visit', tr: 'ziyaret başına', es: 'por visita', de: 'pro Besuch' },
+  rating_label: { en: 'Rating', tr: 'Puan', es: 'Puntuación', de: 'Bewertung' },
+  no_reviews: { en: 'No reviews', tr: 'Yorum yok', es: 'Sin reseñas', de: 'Keine Bewertungen' },
+  reviews_label: { en: 'Reviews', tr: 'Yorumlar', es: 'Reseñas', de: 'Bewertungen' },
+  education: { en: 'Education', tr: 'Eğitim', es: 'Educación', de: 'Ausbildung' },
+  experience_label: { en: 'Experience', tr: 'Deneyim', es: 'Experiencia', de: 'Erfahrung' },
+  patient_reviews: { en: 'Patient Reviews', tr: 'Hasta Yorumları', es: 'Reseñas de Pacientes', de: 'Patientenbewertungen' },
+  no_reviews_first: { en: 'No reviews yet. Be the first to review!', tr: 'Henüz yorum yok. İlk yorum yapan siz olun!', es: 'Sin reseñas aún. ¡Sé el primero!', de: 'Noch keine Bewertungen. Seien Sie der Erste!' },
+  book_with: { en: 'Book with', tr: 'Randevu Al:', es: 'Reservar con', de: 'Buchen bei' },
+  // Auth
+  welcome_back_title: { en: 'Welcome Back', tr: 'Tekrar Hoşgeldiniz', es: 'Bienvenido de nuevo', de: 'Willkommen zurück' },
+  provider_signup: { en: 'Provider Sign Up', tr: 'Doktor Kaydı', es: 'Registro de Proveedor', de: 'Anbieter-Registrierung' },
+  patient_signup: { en: 'Patient Sign Up', tr: 'Hasta Kaydı', es: 'Registro de Paciente', de: 'Patientenregistrierung' },
+  sign_in_arrow: { en: 'Sign In →', tr: 'Giriş Yap →', es: 'Iniciar sesión →', de: 'Anmelden →' },
+  register_provider: { en: 'Register as Provider →', tr: 'Doktor Olarak Kayıt →', es: 'Registrarse como Proveedor →', de: 'Als Anbieter registrieren →' },
+  create_account: { en: 'Create Account →', tr: 'Hesap Oluştur →', es: 'Crear cuenta →', de: 'Konto erstellen →' },
+  no_account: { en: "Don't have an account? Sign up", tr: 'Hesabınız yok mu? Kaydolun', es: '¿No tiene cuenta? Regístrese', de: 'Kein Konto? Registrieren' },
+  have_account: { en: 'Already have an account? Sign in', tr: 'Zaten hesabınız var mı? Giriş yapın', es: '¿Ya tiene cuenta? Inicie sesión', de: 'Haben Sie ein Konto? Anmelden' },
+  switch_to_patient: { en: 'Switch to Patient', tr: 'Hasta Hesabına Geç', es: 'Cambiar a Paciente', de: 'Zu Patient wechseln' },
+  are_you_doctor: { en: 'Are you a Doctor?', tr: 'Doktor musunuz? Tıklayın', es: '¿Es médico? Haga clic', de: 'Sind Sie Arzt? Klicken' },
+  legal_read_scroll: { en: '↓ Please read the full text to continue', tr: '↓ Devam etmek için metni okuyun', es: '↓ Lea el texto completo para continuar', de: '↓ Bitte lesen Sie den Text vollständig' },
+  legal_confirm: { en: 'I have read and understood', tr: 'Okudum, Anladım', es: 'He leído y entendido', de: 'Ich habe gelesen und verstanden' },
+  // Visits / Dashboard
+  my_visits_title: { en: 'My Visits', tr: 'Ziyaretlerim', es: 'Mis Visitas', de: 'Meine Besuche' },
+  no_visits: { en: 'No visits yet', tr: 'Henüz ziyaret yok', es: 'Sin visitas aún', de: 'Noch keine Besuche' },
+  // Profile
+  first_name: { en: 'First Name', tr: 'Ad', es: 'Nombre', de: 'Vorname' },
+  last_name: { en: 'Last Name', tr: 'Soyad', es: 'Apellido', de: 'Nachname' },
+  country: { en: 'Country', tr: 'Ülke', es: 'País', de: 'Land' },
+  city: { en: 'City', tr: 'Şehir', es: 'Ciudad', de: 'Stadt' },
+  birth_date: { en: 'Date of Birth', tr: 'Doğum Tarihi', es: 'Fecha de Nacimiento', de: 'Geburtsdatum' },
+  manage_schedule: { en: 'Manage Schedule', tr: 'Takvimi Yönet', es: 'Gestionar Horario', de: 'Zeitplan verwalten' },
+  admin_panel: { en: 'Admin', tr: 'Admin', es: 'Admin', de: 'Admin' },
+  // Emergency
+  emergency_call: { en: 'Life-threatening? Call {num} immediately.', tr: 'Hayati tehlike? Hemen {num}\'yi arayın.', es: '¿Emergencia vital? Llame al {num}.', de: 'Lebensgefahr? Sofort {num} anrufen.' },
+  // Auth form
+  first_name_req: { en: 'First Name *', tr: 'Ad *', es: 'Nombre *', de: 'Vorname *' },
+  last_name_req: { en: 'Last Name *', tr: 'Soyad *', es: 'Apellido *', de: 'Nachname *' },
+  city_province: { en: 'City / Province *', tr: 'Şehir / İl *', es: 'Ciudad / Provincia *', de: 'Stadt / Provinz *' },
+  select_placeholder: { en: 'Select...', tr: 'Seçiniz...', es: 'Seleccionar...', de: 'Auswählen...' },
+  birth_date_req: { en: 'Date of Birth *', tr: 'Doğum Tarihi *', es: 'Fecha de Nacimiento *', de: 'Geburtsdatum *' },
+  // Auth errors
+  err_all_required: { en: 'All fields are required.', tr: 'Tüm alanlar zorunludur.', es: 'Todos los campos son obligatorios.', de: 'Alle Felder sind erforderlich.' },
+  err_name_required: { en: 'First and last name are required.', tr: 'İsim ve soyisim zorunludur.', es: 'Nombre y apellido son obligatorios.', de: 'Vor- und Nachname sind erforderlich.' },
+  err_birth_required: { en: 'Date of birth is required.', tr: 'Doğum tarihi zorunludur.', es: 'La fecha de nacimiento es obligatoria.', de: 'Geburtsdatum ist erforderlich.' },
+  err_city_required: { en: 'City/Province is required.', tr: 'Şehir/İl bilgisi zorunludur.', es: 'Ciudad/Provincia es obligatoria.', de: 'Stadt/Provinz ist erforderlich.' },
+  err_pw_short: { en: 'Password must be at least 6 characters.', tr: 'Şifre en az 6 karakter olmalıdır.', es: 'La contraseña debe tener al menos 6 caracteres.', de: 'Passwort muss mindestens 6 Zeichen haben.' },
+  err_kvkk_read: { en: 'Please read the KVKK Policy first.', tr: "KVKK Aydınlatma Metni'ni önce okumalısınız.", es: 'Debe leer la Política KVKK primero.', de: 'Bitte zuerst die KVKK-Richtlinie lesen.' },
+  err_kvkk_consent: { en: 'You must accept the KVKK Policy.', tr: "KVKK Aydınlatma Metni'ni onaylamanız gereklidir.", es: 'Debe aceptar la Política KVKK.', de: 'KVKK-Richtlinie muss akzeptiert werden.' },
+  err_health_read: { en: 'Please read the Health Data Consent first.', tr: 'Sağlık Verisi Açık Rızası metnini önce okumalısınız.', es: 'Lea primero el Consentimiento de Datos de Salud.', de: 'Bitte zuerst die Gesundheitsdaten-Einwilligung lesen.' },
+  err_health_consent: { en: 'Health data processing consent is required.', tr: 'Sağlık verisi işleme onayı gereklidir.', es: 'Se requiere consentimiento de datos de salud.', de: 'Einwilligung zur Gesundheitsdatenverarbeitung erforderlich.' },
+  err_license_required: { en: 'Diploma/Registration number is required.', tr: 'Diploma/Tescil numarası zorunludur.', es: 'El número de diploma/registro es obligatorio.', de: 'Diplom-/Registrierungsnummer ist erforderlich.' },
+  err_tabip_required: { en: 'Medical Chamber membership number is required.', tr: 'Tabip Odası üyelik numarası zorunludur.', es: 'El número del Colegio Médico es obligatorio.', de: 'Ärztekammer-Mitgliedsnummer ist erforderlich.' },
+  err_malpraktis_required: { en: 'Malpractice insurance policy number is required.', tr: 'Malpraktis sigorta poliçe numarası zorunludur.', es: 'El número de póliza de malpractice es obligatorio.', de: 'Malpraktis-Versicherungsnummer ist erforderlich.' },
+  err_contractor_read: { en: 'Please read the Independent Contractor Agreement first.', tr: 'Bağımsız yüklenici sözleşmesini önce okumalısınız.', es: 'Lea primero el Acuerdo de Contratista.', de: 'Bitte zuerst den Auftragnehmervertrag lesen.' },
+  err_contractor_consent: { en: 'You must accept the Independent Contractor Agreement.', tr: 'Bağımsız yüklenici sözleşmesini onaylamanız gereklidir.', es: 'Debe aceptar el Acuerdo de Contratista.', de: 'Auftragnehmervertrag muss akzeptiert werden.' },
+  err_connection: { en: 'Connection error.', tr: 'Bağlantı hatası.', es: 'Error de conexión.', de: 'Verbindungsfehler.' },
+  toast_welcome: { en: 'Welcome!', tr: 'Hoş geldiniz!', es: '¡Bienvenido!', de: 'Willkommen!' },
+  toast_account_created: { en: 'Account created!', tr: 'Hesap oluşturuldu!', es: '¡Cuenta creada!', de: 'Konto erstellt!' },
+  // Visits page
+  patient_history_title: { en: 'Patient History', tr: 'Hasta Geçmişi', es: 'Historial de Pacientes', de: 'Patientenhistorie' },
+  patient_history_sub: { en: 'Your patients and visit history', tr: 'Gelen hastalarınız ve ziyaret geçmişi', es: 'Sus pacientes e historial de visitas', de: 'Ihre Patienten und Besuchshistorie' },
+  visits_sub: { en: 'Your appointments and visit history', tr: 'Randevularınız ve ziyaret geçmişi', es: 'Sus citas e historial de visitas', de: 'Ihre Termine und Besuchshistorie' },
+  tab_upcoming: { en: 'Upcoming', tr: 'Yaklaşan', es: 'Próximas', de: 'Bevorstehend' },
+  tab_history: { en: 'History', tr: 'Geçmiş', es: 'Historial', de: 'Verlauf' },
+  btn_summary: { en: 'Summary', tr: 'Özet', es: 'Resumen', de: 'Zusammenfassung' },
+  btn_rebook: { en: 'Rebook', tr: 'Tekrar Rezerve Et', es: 'Reservar de nuevo', de: 'Erneut buchen' },
+  visits_show_here: { en: 'Your appointments will show here.', tr: 'Randevularınız burada görünecek.', es: 'Sus citas aparecerán aquí.', de: 'Ihre Termine werden hier angezeigt.' },
+  // Favorites
+  fav_sub: { en: 'Quick access to your preferred doctors', tr: 'Tercih ettiğiniz doktorlara hızlı erişim', es: 'Acceso rápido a sus médicos preferidos', de: 'Schnellzugriff auf Ihre bevorzugten Ärzte' },
+  fav_remove: { en: '♥ Remove', tr: '♥ Çıkar', es: '♥ Eliminar', de: '♥ Entfernen' },
+  fav_book_visit: { en: 'Book Visit', tr: 'Rezerve Et', es: 'Reservar Visita', de: 'Besuch buchen' },
+  no_favs: { en: 'No favorite doctors', tr: 'Favori doktor yok', es: 'Sin médicos favoritos', de: 'Keine Lieblingsärzte' },
+  no_favs_sub: { en: 'Heart a doctor to add them here.', tr: 'Doktorların kalbine basarak buraya ekle.', es: 'Toca el corazón para añadir.', de: 'Tippe auf das Herz, um hinzuzufügen.' },
+  new_doctor: { en: 'New doctor', tr: 'Yeni doktor', es: 'Médico nuevo', de: 'Neuer Arzt' },
+  // Booking / insurance
+  err_tc_length: { en: 'TC ID must be 11 digits.', tr: 'TC Kimlik 11 haneli olmalı.', es: 'El TC ID debe tener 11 dígitos.', de: 'TC-ID muss 11 Stellen haben.' },
+  insurance_found: { en: '{n} insurance record(s) found!', tr: '{n} sigorta kaydı bulundu!', es: '¡{n} registro(s) de seguro encontrado(s)!', de: '{n} Versicherungsdatensatz/-sätze gefunden!' },
+  insurance_not_found: { en: 'No insurance found.', tr: 'Sigorta bulunamadı.', es: 'No se encontró seguro.', de: 'Keine Versicherung gefunden.' },
+  insurance_error: { en: 'Insurance query error.', tr: 'Sigorta sorgulama hatası.', es: 'Error de consulta de seguro.', de: 'Versicherungsabfragefehler.' },
+  err_address_required: { en: 'Please fill in all address fields.', tr: 'Lütfen tüm adres alanlarını doldurun.', es: 'Por favor complete todos los campos de dirección.', de: 'Bitte alle Adressfelder ausfüllen.' },
+  err_time_required: { en: 'Please select a time.', tr: 'Lütfen bir saat seçin.', es: 'Por favor seleccione una hora.', de: 'Bitte eine Uhrzeit auswählen.' },
+  err_payment_required: { en: 'Please complete payment details.', tr: 'Ödeme bilgilerini tamamlayın.', es: 'Complete los datos de pago.', de: 'Zahlungsdetails vervollständigen.' },
+  err_informed_consent: { en: 'Informed consent is required.', tr: 'Aydınlatılmış onam onayı gerekli.', es: 'Se requiere consentimiento informado.', de: 'Einwilligung nach Aufklärung erforderlich.' },
+  err_distance_contract: { en: 'Distance contract approval is required.', tr: 'Mesafeli sözleşme onayı gerekli.', es: 'Se requiere aprobación del contrato a distancia.', de: 'Fernvertragsgenehmigung erforderlich.' },
 };
+
+function getEmergencyNumber(country) {
+  const c = (country||'').toLowerCase();
+  if(c.includes('uk')||c.includes('united kingdom')||c.includes('britain')) return '999';
+  if(c.includes('usa')||c.includes('united states')||c.includes('us')) return '911';
+  return '112'; // Turkey, Germany, Netherlands, France, Spain, and most of Europe/world
+}
 
 const Ctx = createContext(null);
 const useT = () => useContext(Ctx);
@@ -501,8 +629,9 @@ function CreditCardVisual({number, holder, expiry}) {
 // ─── MAIN APP ────────────────────────────────────────────────
 function App() {
   const [locale, setLocale] = useState('en');
-  const t = (k) => TR[k]?.[locale] || k;
-  const [dk, setDk] = useState(false);
+  const t = (k, vars) => { let s = TR[k]?.[locale] || k; if(vars) Object.keys(vars).forEach(v=>{s=s.replace('{'+v+'}',vars[v]);}); return s; };
+  const [dk, setDk] = useState(() => localStorage.getItem('dd_dk') === '1');
+  useEffect(() => { localStorage.setItem('dd_dk', dk ? '1' : '0'); }, [dk]);
   const [isAuth, setIsAuth] = useState(false);
   const [role, setRole] = useState('patient');
   const [user, setUser] = useState(null);
@@ -728,10 +857,10 @@ function App() {
   }, []);
 
   if (loading) return (
-    <div style={{minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center',background:'#f8fafc'}}>
+    <div data-theme={dk?'dark':'light'} style={{minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center',background:'var(--c-bg)'}}>
       <div style={{textAlign:'center'}}>
         <div style={{width:56,height:56,borderRadius:16,background:'linear-gradient(135deg,#0d9488,#6366f1)',display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 16px',fontSize:28}}>🩺</div>
-        <div style={{fontSize:14,color:'#64748b',fontWeight:600}}>Loading DocDoor...</div>
+        <div style={{fontSize:14,color:'var(--c-muted)',fontWeight:600}}>Loading DocDoor...</div>
       </div>
     </div>
   );
@@ -805,6 +934,9 @@ function App() {
         .dd-input{width:100%;padding:.875rem 1rem;background:var(--c-subtle);border:1.5px solid var(--c-border);border-radius:14px;color:var(--c-text);font-family:var(--font-body);font-size:.9375rem;font-weight:500;outline:none;transition:all .2s;box-sizing:border-box;}
         .dd-input:focus{border-color:var(--c-accent);box-shadow:0 0 0 3px rgba(13,148,136,.12);}
         .dd-input::placeholder{color:var(--c-muted);opacity:.7;}
+        [data-theme="dark"] .dd-input{color-scheme:dark;}
+        [data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator{filter:brightness(0) invert(1);opacity:1;cursor:pointer;}
+        input[type="date"]::-webkit-calendar-picker-indicator{cursor:pointer;}
         .dd-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1.5rem;border-radius:14px;font-family:var(--font-display);font-weight:700;font-size:.9375rem;cursor:pointer;transition:all .25s cubic-bezier(.22,1,.36,1);border:none;position:relative;overflow:hidden;}
         .dd-btn:active{transform:scale(.96);}
         .dd-btn::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--ripple-x,50%) var(--ripple-y,50%),rgba(255,255,255,.3) 0%,transparent 60%);opacity:0;transition:opacity .4s;}
@@ -902,7 +1034,7 @@ function Header({goHome,isGuest,role,user,onLogout,onVisits,onAdmin,onProfile,on
           {!isGuest && <>
             {/* #6: Remove outline from notification button */}
             <div style={{position:'relative'}} ref={nRef}>
-              <button onClick={()=>{setNotifO(!notifO);if(!notifO)setNotifs(p=>p.map(n=>({...n,read:true})));}} style={{width:32,height:32,borderRadius:10,display:'flex',alignItems:'center',justifyContent:'center',border:'none',outline:'none',background:'transparent',color:'var(--c-muted)',cursor:'pointer',position:'relative',transition:'all .2s'}}>
+              <button onClick={()=>setNotifO(!notifO)} style={{width:32,height:32,borderRadius:10,display:'flex',alignItems:'center',justifyContent:'center',border:'none',outline:'none',background:'transparent',color:'var(--c-muted)',cursor:'pointer',position:'relative',transition:'all .2s'}}>
                 <I n="bell" s={18}/>
                 {unread>0 && <div style={{position:'absolute',top:4,right:4,width:8,height:8,borderRadius:'50%',background:'#22c55e',border:'2px solid var(--c-surface)',boxShadow:'0 0 4px rgba(34,197,94,0.5)'}}/>}
               </button>
@@ -935,10 +1067,10 @@ function Header({goHome,isGuest,role,user,onLogout,onVisits,onAdmin,onProfile,on
                   <div style={{height:1,background:'var(--c-border)',margin:'.375rem .75rem'}}/>
                   <button onClick={()=>{onProfile();setMenuO(false);}} style={{display:'flex',alignItems:'center',gap:'.625rem',padding:'.625rem .75rem',borderRadius:10,fontSize:'.8125rem',fontWeight:600,color:'var(--c-text)',cursor:'pointer',transition:'background .15s',border:'none',background:'transparent',width:'100%',textAlign:'left'}}><I n="user" s={16}/>{t('profile')}</button>
                   <button onClick={()=>{onVisits();setMenuO(false);}} style={{display:'flex',alignItems:'center',gap:'.625rem',padding:'.625rem .75rem',borderRadius:10,fontSize:'.8125rem',fontWeight:600,color:'var(--c-text)',cursor:'pointer',border:'none',background:'transparent',width:'100%',textAlign:'left'}}><I n="clipboard" s={16}/>{role==='doctor'?t('dashboard'):t('my_visits')}</button>
-                  {role==='patient' && <button onClick={()=>{onFavs();setMenuO(false);}} style={{display:'flex',alignItems:'center',gap:'.625rem',padding:'.625rem .75rem',borderRadius:10,fontSize:'.8125rem',fontWeight:600,color:'var(--c-text)',cursor:'pointer',border:'none',background:'transparent',width:'100%',textAlign:'left'}}><I n="heart" s={16}/>Favorite Doctors</button>}
-                  {role==='patient' && <button onClick={()=>{onMeds();setMenuO(false);}} style={{display:'flex',alignItems:'center',gap:'.625rem',padding:'.625rem .75rem',borderRadius:10,fontSize:'.8125rem',fontWeight:600,color:'var(--c-text)',cursor:'pointer',border:'none',background:'transparent',width:'100%',textAlign:'left'}}><I n="pill" s={16}/>Medicines</button>}
-                  {role==='doctor' && onSchedule && <button onClick={()=>{onSchedule();setMenuO(false);}} style={{display:'flex',alignItems:'center',gap:'.625rem',padding:'.625rem .75rem',borderRadius:10,fontSize:'.8125rem',fontWeight:600,color:'var(--c-text)',cursor:'pointer',border:'none',background:'transparent',width:'100%',textAlign:'left'}}><I n="calendar" s={16}/>Manage Schedule</button>}
-                  {role==='admin' && <button onClick={()=>{onAdmin();setMenuO(false);}} style={{display:'flex',alignItems:'center',gap:'.625rem',padding:'.625rem .75rem',borderRadius:10,fontSize:'.8125rem',fontWeight:600,color:'var(--c-text)',cursor:'pointer',border:'none',background:'transparent',width:'100%',textAlign:'left'}}><I n="shieldAlert" s={16}/>Admin</button>}
+                  {role==='patient' && <button onClick={()=>{onFavs();setMenuO(false);}} style={{display:'flex',alignItems:'center',gap:'.625rem',padding:'.625rem .75rem',borderRadius:10,fontSize:'.8125rem',fontWeight:600,color:'var(--c-text)',cursor:'pointer',border:'none',background:'transparent',width:'100%',textAlign:'left'}}><I n="heart" s={16}/>{t('fav_doctors_title')}</button>}
+                  {role==='patient' && <button onClick={()=>{onMeds();setMenuO(false);}} style={{display:'flex',alignItems:'center',gap:'.625rem',padding:'.625rem .75rem',borderRadius:10,fontSize:'.8125rem',fontWeight:600,color:'var(--c-text)',cursor:'pointer',border:'none',background:'transparent',width:'100%',textAlign:'left'}}><I n="pill" s={16}/>{t('todays_meds')}</button>}
+                  {role==='doctor' && onSchedule && <button onClick={()=>{onSchedule();setMenuO(false);}} style={{display:'flex',alignItems:'center',gap:'.625rem',padding:'.625rem .75rem',borderRadius:10,fontSize:'.8125rem',fontWeight:600,color:'var(--c-text)',cursor:'pointer',border:'none',background:'transparent',width:'100%',textAlign:'left'}}><I n="calendar" s={16}/>{t('manage_schedule')}</button>}
+                  {role==='admin' && <button onClick={()=>{onAdmin();setMenuO(false);}} style={{display:'flex',alignItems:'center',gap:'.625rem',padding:'.625rem .75rem',borderRadius:10,fontSize:'.8125rem',fontWeight:600,color:'var(--c-text)',cursor:'pointer',border:'none',background:'transparent',width:'100%',textAlign:'left'}}><I n="shieldAlert" s={16}/>{t('admin_panel')}</button>}
                   <div style={{height:1,background:'var(--c-border)',margin:'.375rem .75rem'}}/>
                   <button onClick={()=>{onLogout();setMenuO(false);}} style={{display:'flex',alignItems:'center',gap:'.625rem',padding:'.625rem .75rem',borderRadius:10,fontSize:'.8125rem',fontWeight:600,color:'var(--c-danger)',cursor:'pointer',border:'none',background:'transparent',width:'100%',textAlign:'left'}}><I n="logout" s={16}/>{t('sign_out')}</button>
                 </div>
@@ -961,34 +1093,37 @@ function AuthView({onLogin,onEmergency}){
   // Legal compliance fields
   const [docWorkStatus,setDocWorkStatus]=useState('muayenehane');const [tabipOdaNo,setTabipOdaNo]=useState('');const [malpraktisPolice,setMalpraktisPolice]=useState('');const [docFirmName,setDocFirmName]=useState('');
   const [kvkkConsent,setKvkkConsent]=useState(false);const [healthDataConsent,setHealthDataConsent]=useState(false);const [independentContractor,setIndependentContractor]=useState(false);
+  const [legalScrolled,setLegalScrolled]=useState(false);
   // Track if legal texts have been read (must read before checking)
   const [kvkkRead,setKvkkRead]=useState(false);const [healthRead,setHealthRead]=useState(false);const [contractorRead,setContractorRead]=useState(false);
   const [showPw,setShowPw]=useState(false);const [err,setErr]=useState('');const [loading,setLoading]=useState(false);
   const [legalModal,setLegalModal]=useState(null); // 'kvkk' | 'consent' | null
+  useEffect(()=>{if(legalModal)setLegalScrolled(false);},[legalModal]);
+  const handleLegalScroll=(e)=>{const el=e.target;if(el.scrollTop+el.clientHeight>=el.scrollHeight-20)setLegalScrolled(true);};
   const submit = async()=>{
     setErr('');
-    if(!em||!pw){setErr('Tüm alanlar zorunludur.');return;}
-    if(mode==='register'&&(!fn||!ln)){setErr('İsim ve soyisim zorunludur.');return;}
-    if(mode==='register'&&!isDoc&&!birthDate){setErr('Doğum tarihi zorunludur.');return;}
-    if(mode==='register'&&!isDoc&&!regProvince){setErr('Şehir/İl bilgisi zorunludur.');return;}
-    if(pw.length<6){setErr('Şifre en az 6 karakter olmalıdır.');return;}
-    if(mode==='register'&&!kvkkRead){setErr('KVKK Aydınlatma Metni\'ni önce okumalısınız.');return;}
-    if(mode==='register'&&!kvkkConsent){setErr('KVKK Aydınlatma Metni\'ni onaylamanız gereklidir.');return;}
-    if(mode==='register'&&!isDoc&&!healthRead){setErr('Sağlık Verisi Açık Rızası metnini önce okumalısınız.');return;}
-    if(mode==='register'&&!isDoc&&!healthDataConsent){setErr('Sağlık verisi işleme onayı gereklidir.');return;}
+    if(!em||!pw){setErr(t('err_all_required'));return;}
+    if(mode==='register'&&(!fn||!ln)){setErr(t('err_name_required'));return;}
+    if(mode==='register'&&!isDoc&&!birthDate){setErr(t('err_birth_required'));return;}
+    if(mode==='register'&&!isDoc&&!regProvince){setErr(t('err_city_required'));return;}
+    if(pw.length<6){setErr(t('err_pw_short'));return;}
+    if(mode==='register'&&!kvkkRead){setErr(t('err_kvkk_read'));return;}
+    if(mode==='register'&&!kvkkConsent){setErr(t('err_kvkk_consent'));return;}
+    if(mode==='register'&&!isDoc&&!healthRead){setErr(t('err_health_read'));return;}
+    if(mode==='register'&&!isDoc&&!healthDataConsent){setErr(t('err_health_consent'));return;}
     if(mode==='register'&&isDoc){
-      if(!lic){setErr('Diploma/Tescil numarası zorunludur.');return;}
-      if(!tabipOdaNo){setErr('Tabip Odası üyelik numarası zorunludur.');return;}
-      if(!malpraktisPolice){setErr('Malpraktis sigorta poliçe numarası zorunludur.');return;}
-      if(!contractorRead){setErr('Bağımsız yüklenici sözleşmesini önce okumalısınız.');return;}
-      if(!independentContractor){setErr('Bağımsız yüklenici sözleşmesini onaylamanız gereklidir.');return;}
+      if(!lic){setErr(t('err_license_required'));return;}
+      if(!tabipOdaNo){setErr(t('err_tabip_required'));return;}
+      if(!malpraktisPolice){setErr(t('err_malpraktis_required'));return;}
+      if(!contractorRead){setErr(t('err_contractor_read'));return;}
+      if(!independentContractor){setErr(t('err_contractor_consent'));return;}
     }
     setLoading(true);
     try {
       if(mode==='login'){
         const res = await AuthDB.login(em,pw);
         if(res.error){setErr(res.error);setLoading(false);return;}
-        onLogin(res.user);toast('Hoş geldiniz!','success');
+        onLogin(res.user);toast(t('toast_welcome'),'success');
       } else {
         const r=isDoc?'doctor':'patient';
         const userData = {id:`${r[0].toUpperCase()}${Date.now().toString(36)}`,role:r,firstName:fn,lastName:ln,specialty:isDoc?spec:undefined,address:regProvince,country:regCountry,birthDate,licenseNumber:lic,
@@ -996,21 +1131,21 @@ function AuthView({onLogin,onEmergency}){
         };
         const res = await AuthDB.signup(em,pw,userData);
         if(res.error){setErr(res.error);setLoading(false);return;}
-        onLogin(res.user);toast('Hesap oluşturuldu!','success');
+        onLogin(res.user);toast(t('toast_account_created'),'success');
       }
-    } catch(e){setErr('Bağlantı hatası.');}
+    } catch(e){setErr(t('err_connection'));}
     setLoading(false);
   };
   const themeColor = isDoc&&mode==='register' ? '#1e293b' : '#0d9488';
   const themeGrad = isDoc&&mode==='register' ? 'linear-gradient(135deg,#1e293b,#334155)' : 'linear-gradient(135deg,#0d9488,#14b8a6)';
-  const InputIcon = ({icon}) => <span style={{position:'absolute',left:14,top:'50%',transform:'translateY(-50%)',pointerEvents:'none',color:'#94a3b8',display:'flex'}}><I n={icon} s={18}/></span>;
+  const InputIcon = ({icon}) => <span style={{position:'absolute',left:14,top:'50%',transform:'translateY(-50%)',pointerEvents:'none',color:'var(--c-muted)',display:'flex'}}><I n={icon} s={18}/></span>;
   return (
     <div className="dd-page" style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
       <div style={{width:'100%',maxWidth:400}} className="animate-fadeUp">
         {/* Green/dark banner */}
         <div style={{background:themeGrad,borderRadius:'24px 24px 0 0',padding:'32px 24px 28px',textAlign:'center',color:'white'}}>
           <div style={{width:56,height:56,borderRadius:16,background:'rgba(255,255,255,.2)',display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 14px',backdropFilter:'blur(8px)'}}><I n="stethoscope" s={30} c="text-white"/></div>
-          <h1 style={{fontSize:'1.5rem',fontWeight:900,letterSpacing:'-.02em',color:'white'}}>{mode==='login'?'Welcome Back':isDoc?'Provider Sign Up':'Patient Sign Up'}</h1>
+          <h1 style={{fontSize:'1.5rem',fontWeight:900,letterSpacing:'-.02em',color:'white'}}>{mode==='login'?t('welcome_back_title'):isDoc?t('provider_signup'):t('patient_signup')}</h1>
         </div>
         {/* Form card */}
         <div style={{background:'var(--c-surface)',borderRadius:'0 0 24px 24px',padding:'24px',border:'1px solid var(--c-border)',borderTop:'none',boxShadow:'var(--shadow)'}}>
@@ -1018,20 +1153,28 @@ function AuthView({onLogin,onEmergency}){
             {err && <div style={{padding:'10px 14px',borderRadius:12,background:'color-mix(in srgb,var(--c-danger) 10%,transparent)',color:'var(--c-danger)',fontSize:13,fontWeight:600,display:'flex',alignItems:'center',gap:8}}><I n="alertCircle" s={16}/>{err}</div>}
             {mode==='register' && <>
               <div style={{display:'flex',justifyContent:'center',marginBottom:2}}>
-                <button onClick={()=>setIsDoc(!isDoc)} style={{fontSize:12,fontWeight:700,padding:'6px 16px',borderRadius:100,border:`1.5px solid ${isDoc?'#1e293b':'var(--c-border)'}`,background:isDoc?'#1e293b':'transparent',color:isDoc?'white':'var(--c-muted)',cursor:'pointer',transition:'all .3s'}}>{isDoc?'Hasta Hesabına Geç':'Doktor musunuz? Tıklayın'}</button>
+                <button onClick={()=>setIsDoc(!isDoc)} style={{fontSize:12,fontWeight:700,padding:'6px 16px',borderRadius:100,border:`1.5px solid ${isDoc?'#1e293b':'var(--c-border)'}`,background:isDoc?'#1e293b':'transparent',color:isDoc?'white':'var(--c-muted)',cursor:'pointer',transition:'all .3s'}}>{isDoc?t('switch_to_patient'):t('are_you_doctor')}</button>
               </div>
               <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10}}>
-                <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>Ad *</label><div style={{position:'relative'}}><InputIcon icon="user"/><input className="dd-input" style={{paddingLeft:40}} placeholder="Ahmet" value={fn} onChange={e=>setFn(e.target.value)}/></div></div>
-                <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>Soyad *</label><div style={{position:'relative'}}><InputIcon icon="user"/><input className="dd-input" style={{paddingLeft:40}} placeholder="Yılmaz" value={ln} onChange={e=>setLn(e.target.value)}/></div></div>
+                <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>{t('first_name_req')}</label><div style={{position:'relative'}}><InputIcon icon="user"/><input className="dd-input" style={{paddingLeft:40}} placeholder="Ahmet" value={fn} onChange={e=>setFn(e.target.value)}/></div></div>
+                <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>{t('last_name_req')}</label><div style={{position:'relative'}}><InputIcon icon="user"/><input className="dd-input" style={{paddingLeft:40}} placeholder="Yılmaz" value={ln} onChange={e=>setLn(e.target.value)}/></div></div>
               </div>
               {!isDoc && <>
                 <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8}}>
-                  <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>Ülke</label><div style={{position:'relative'}}><InputIcon icon="globe"/><select className="dd-input" style={{paddingLeft:40}} value={regCountry} onChange={e=>setRegCountry(e.target.value)}><option value="Türkiye">Türkiye</option><option value="Germany">Germany</option><option value="UK">United Kingdom</option><option value="USA">USA</option><option value="Netherlands">Netherlands</option><option value="France">France</option><option value="Other">Diğer</option></select></div></div>
-                  <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>Şehir / İl *</label><div style={{position:'relative'}}><InputIcon icon="mapPin"/><select className="dd-input" style={{paddingLeft:40}} value={regProvince} onChange={e=>setRegProvince(e.target.value)}><option value="">Seçiniz...</option>{['Adana','Adıyaman','Afyonkarahisar','Ağrı','Aksaray','Amasya','Ankara','Antalya','Ardahan','Artvin','Aydın','Balıkesir','Bartın','Batman','Bayburt','Bilecik','Bingöl','Bitlis','Bolu','Burdur','Bursa','Çanakkale','Çankırı','Çorum','Denizli','Diyarbakır','Düzce','Edirne','Elazığ','Erzincan','Erzurum','Eskişehir','Gaziantep','Giresun','Gümüşhane','Hakkari','Hatay','Iğdır','Isparta','İstanbul','İzmir','Kahramanmaraş','Karabük','Karaman','Kars','Kastamonu','Kayseri','Kilis','Kırıkkale','Kırklareli','Kırşehir','Kocaeli','Konya','Kütahya','Malatya','Manisa','Mardin','Mersin','Muğla','Muş','Nevşehir','Niğde','Ordu','Osmaniye','Rize','Sakarya','Samsun','Şanlıurfa','Siirt','Sinop','Sivas','Şırnak','Tekirdağ','Tokat','Trabzon','Tunceli','Uşak','Van','Yalova','Yozgat','Zonguldak'].map(p=><option key={p} value={p}>{p}</option>)}</select></div></div>
+                  <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>{t('country')}</label><div style={{position:'relative'}}><InputIcon icon="globe"/><select className="dd-input" style={{paddingLeft:40}} value={regCountry} onChange={e=>setRegCountry(e.target.value)}><option value="Türkiye">Türkiye</option><option value="Germany">Germany</option><option value="UK">United Kingdom</option><option value="USA">USA</option><option value="Netherlands">Netherlands</option><option value="France">France</option><option value="Other">Diğer</option></select></div></div>
+                  <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>{t('city_province')}</label><div style={{position:'relative'}}><InputIcon icon="mapPin"/><select className="dd-input" style={{paddingLeft:40}} value={regProvince} onChange={e=>setRegProvince(e.target.value)}><option value="">{t('select_placeholder')}</option>{['Adana','Adıyaman','Afyonkarahisar','Ağrı','Aksaray','Amasya','Ankara','Antalya','Ardahan','Artvin','Aydın','Balıkesir','Bartın','Batman','Bayburt','Bilecik','Bingöl','Bitlis','Bolu','Burdur','Bursa','Çanakkale','Çankırı','Çorum','Denizli','Diyarbakır','Düzce','Edirne','Elazığ','Erzincan','Erzurum','Eskişehir','Gaziantep','Giresun','Gümüşhane','Hakkari','Hatay','Iğdır','Isparta','İstanbul','İzmir','Kahramanmaraş','Karabük','Karaman','Kars','Kastamonu','Kayseri','Kilis','Kırıkkale','Kırklareli','Kırşehir','Kocaeli','Konya','Kütahya','Malatya','Manisa','Mardin','Mersin','Muğla','Muş','Nevşehir','Niğde','Ordu','Osmaniye','Rize','Sakarya','Samsun','Şanlıurfa','Siirt','Sinop','Sivas','Şırnak','Tekirdağ','Tokat','Trabzon','Tunceli','Uşak','Van','Yalova','Yozgat','Zonguldak'].map(p=><option key={p} value={p}>{p}</option>)}</select></div></div>
                 </div>
-                <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>Doğum Tarihi *</label><div style={{position:'relative'}}><InputIcon icon="calendar"/><input className="dd-input" style={{paddingLeft:40}} type="date" value={birthDate} onChange={e=>setBirthDate(e.target.value)} max={new Date().toISOString().split('T')[0]}/></div></div>
+                <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>{t('birth_date_req')}</label><div style={{position:'relative'}}><InputIcon icon="calendar"/><input className="dd-input" style={{paddingLeft:40}} type="date" value={birthDate} onChange={e=>setBirthDate(e.target.value)} max={new Date().toISOString().split('T')[0]}/></div></div>
               </>}
               {isDoc && <>
+                {/* Erken kayıt teşviki */}
+                <div style={{padding:'12px 14px',borderRadius:12,background:'linear-gradient(135deg,color-mix(in srgb,#0d9488 8%,transparent),color-mix(in srgb,#6366f1 6%,transparent))',border:'1px solid color-mix(in srgb,#0d9488 20%,transparent)',fontSize:11,display:'flex',gap:10,alignItems:'flex-start'}}>
+                  <span style={{fontSize:18,flexShrink:0}}>🎁</span>
+                  <div>
+                    <div style={{fontWeight:800,color:'#0d9488',fontSize:12,marginBottom:3}}>İlk 50 Doktora Özel Teklif</div>
+                    <div style={{color:'var(--c-text)',lineHeight:1.6}}>İlk <strong>3 ay komisyon sıfır</strong> — platformda görünürlüğünüzü test edin, kazancınızın tamamını alın.</div>
+                  </div>
+                </div>
                 {/* Yasal uyarı */}
                 <div style={{padding:'10px 14px',borderRadius:12,background:'color-mix(in srgb,var(--c-warn) 8%,transparent)',border:'1px solid color-mix(in srgb,var(--c-warn) 18%,transparent)',fontSize:11,color:'#92400e',display:'flex',gap:8,alignItems:'flex-start'}}>
                   <I n="alertTriangle" s={16} c="text-amber-600" style={{flexShrink:0,marginTop:1}}/>
@@ -1047,7 +1190,14 @@ function AuthView({onLogin,onEmergency}){
                 <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>Uzmanlık Alanı *</label><select className="dd-input" value={spec} onChange={e=>setSpec(e.target.value)}><option>Aile Hekimliği</option><option>İç Hastalıkları</option><option>Çocuk Sağlığı</option><option>Kardiyoloji</option><option>Dermatoloji</option><option>Ortopedi</option><option>Nöroloji</option><option>Psikiyatri</option><option>Göz Hastalıkları</option><option>KBB</option></select></div>
                 <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>Diploma / Tescil Numarası *</label><div style={{position:'relative'}}><InputIcon icon="shield"/><input className="dd-input" style={{paddingLeft:40}} placeholder="Tescil No" value={lic} onChange={e=>setLic(e.target.value)}/></div></div>
                 <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>Tabip Odası Üyelik No *</label><input className="dd-input" placeholder="Tabip Odası No" value={tabipOdaNo} onChange={e=>setTabipOdaNo(e.target.value)}/></div>
-                <div><label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>Malpraktis Sigorta Poliçe No *</label><input className="dd-input" placeholder="Poliçe numarası" value={malpraktisPolice} onChange={e=>setMalpraktisPolice(e.target.value)}/></div>
+                <div>
+                  <label style={{fontSize:11,fontWeight:700,color:'var(--c-muted)',display:'block',marginBottom:4}}>Malpraktis Sigorta Poliçe No *</label>
+                  <input className="dd-input" placeholder="Poliçe numarası" value={malpraktisPolice} onChange={e=>setMalpraktisPolice(e.target.value)}/>
+                  <div style={{marginTop:6,padding:'8px 12px',borderRadius:10,background:'color-mix(in srgb,#6366f1 6%,transparent)',border:'1px solid color-mix(in srgb,#6366f1 15%,transparent)',fontSize:10,color:'#4338ca',display:'flex',gap:6,alignItems:'flex-start',lineHeight:1.6}}>
+                    <span style={{flexShrink:0,marginTop:1}}>💡</span>
+                    <span>Malpraktis sigortanız yok mu? Kayıt sonrası <strong>sigorta aracılık hizmetimizden</strong> yararlanabilirsiniz. <strong>malpraktis@docdoor.com</strong> adresine yazın.</span>
+                  </div>
+                </div>
                 {/* Bağımsız Yüklenici Onayı */}
                 <label style={{display:'flex',gap:10,alignItems:'flex-start',padding:'10px 14px',borderRadius:12,background:'var(--c-subtle)',fontSize:12,cursor:contractorRead?'pointer':'not-allowed',opacity:contractorRead?1:0.6,border:'1px solid var(--c-border)'}}>
                   <input type="checkbox" checked={independentContractor} onChange={e=>contractorRead&&setIndependentContractor(e.target.checked)} disabled={!contractorRead} style={{marginTop:2,accentColor:'var(--c-accent)'}}/>
@@ -1079,18 +1229,18 @@ function AuthView({onLogin,onEmergency}){
               <button onClick={()=>setShowPw(!showPw)} style={{position:'absolute',right:8,top:'50%',transform:'translateY(-50%)',background:'none',border:'none',cursor:'pointer',padding:6,color:'var(--c-muted)'}}><I n={showPw?'eyeOff':'eye'} s={18}/></button>
             </div></div>
             <button className="dd-btn" style={{width:'100%',marginTop:4,padding:'1rem',background:themeColor,color:'white',boxShadow:`0 4px 14px ${themeColor}44`}} disabled={loading} onClick={submit}>
-              {loading?<span className="animate-spin" style={{display:'inline-flex'}}><I n="loader" s={18} c="text-white"/></span>:mode==='login'?'Sign In →':isDoc?'Register as Provider →':'Create Account →'}
+              {loading?<span className="animate-spin" style={{display:'inline-flex'}}><I n="loader" s={18} c="text-white"/></span>:mode==='login'?t('sign_in_arrow'):isDoc?t('register_provider'):t('create_account')}
             </button>
           </div>
           <div style={{textAlign:'center',marginTop:16}}>
-            <button onClick={()=>{setMode(mode==='login'?'register':'login');setErr('');setIsDoc(false);}} style={{background:'none',border:'none',color:themeColor,fontSize:13,fontWeight:600,cursor:'pointer'}}>{mode==='login'?"Don't have an account? Sign up":"Already have an account? Sign in"}</button>
+            <button onClick={()=>{setMode(mode==='login'?'register':'login');setErr('');setIsDoc(false);}} style={{background:'none',border:'none',color:themeColor,fontSize:13,fontWeight:600,cursor:'pointer'}}>{mode==='login'?t('no_account'):t('have_account')}</button>
           </div>
         </div>
       </div>
       {/* Legal Text Modal */}
       {legalModal && (
         <div style={{position:'fixed',inset:0,zIndex:300,display:'flex',alignItems:'center',justifyContent:'center',padding:16,background:'rgba(0,0,0,.6)',backdropFilter:'blur(12px)'}} onClick={()=>setLegalModal(null)}>
-          <div className="dd-card animate-fadeUp" style={{maxWidth:520,width:'100%',padding:'2rem',borderRadius:24,maxHeight:'85vh',overflowY:'auto'}} onClick={e=>e.stopPropagation()}>
+          <div className="dd-card animate-fadeUp" style={{maxWidth:520,width:'100%',padding:'2rem',borderRadius:24,maxHeight:'85vh',overflowY:'auto'}} onClick={e=>e.stopPropagation()} onScroll={handleLegalScroll}>
             <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:16}}>
               <h3 style={{fontSize:'1.1rem',fontWeight:800}}>{legalModal==='kvkk'?'KVKK Aydınlatma Metni':legalModal==='consent'?'Sağlık Verisi Açık Rızası':'Bağımsız Yüklenici Sözleşmesi'}</h3>
               <button onClick={()=>setLegalModal(null)} style={{background:'none',border:'none',cursor:'pointer',padding:4,color:'var(--c-muted)',fontSize:20}}>✕</button>
@@ -1142,7 +1292,7 @@ function AuthView({onLogin,onEmergency}){
                 <p style={{marginTop:12,fontWeight:700,color:'var(--c-accent)'}}>İletişim: legal@docdoor.com</p>
               </div>
             )}
-            <button onClick={()=>{if(legalModal==='kvkk')setKvkkRead(true);else if(legalModal==='consent')setHealthRead(true);else if(legalModal==='contractor')setContractorRead(true);setLegalModal(null);}} className="dd-btn dd-btn-primary" style={{width:'100%',marginTop:20,padding:'12px'}}>Okudum, Anladım</button>
+            <button onClick={()=>{if(legalModal==='kvkk')setKvkkRead(true);else if(legalModal==='consent')setHealthRead(true);else if(legalModal==='contractor')setContractorRead(true);setLegalModal(null);}} className="dd-btn dd-btn-primary" disabled={!legalScrolled} style={{width:'100%',marginTop:20,padding:'12px',opacity:legalScrolled?1:0.4,cursor:legalScrolled?'pointer':'not-allowed'}}>{legalScrolled?t('legal_confirm'):t('legal_read_scroll')}</button>
           </div>
         </div>
       )}
@@ -1158,8 +1308,9 @@ function HomeView({onEmergency,onRoutine,visits,user,favDocs,docs,meds,onSelectD
   const favDocList = docs.filter(d=>favDocs.includes(d.id));
   const activeMeds = (meds||[]).filter(m=>m.active);
   const hour = new Date().getHours();
-  const greeting = hour<12?'Good morning':hour<18?'Good afternoon':'Good evening';
+  const greeting = hour<12?t('greeting_morning'):hour<18?t('greeting_afternoon'):t('greeting_evening');
   const [selAppt,setSelAppt]=useState(null); // #14: Selected appointment for details
+  const [showKvkk,setShowKvkk]=useState(false);
 
   // Filter medicines due today
   const today = new Date();
@@ -1173,8 +1324,8 @@ function HomeView({onEmergency,onRoutine,visits,user,favDocs,docs,meds,onSelectD
     <div className="dd-page" style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
       <div style={{maxWidth:680,width:'100%'}}>
         <div className="animate-fadeUp" style={{marginBottom:28}}>
-          <h1 style={{fontSize:'clamp(1.5rem,3.5vw,2rem)',fontWeight:900,letterSpacing:'-.03em'}}>What kind of care do you need?</h1>
-          <p style={{color:'var(--c-muted)',marginTop:4,fontSize:15}}>Select the option that best describes your situation.</p>
+          <h1 style={{fontSize:'clamp(1.5rem,3.5vw,2rem)',fontWeight:900,letterSpacing:'-.03em'}}>{t('what_care_home')}</h1>
+          <p style={{color:'var(--c-muted)',marginTop:4,fontSize:15}}>{t('what_care_sub')}</p>
         </div>
 
         {/* Upcoming & Pending appointments */}
@@ -1188,13 +1339,13 @@ function HomeView({onEmergency,onRoutine,visits,user,favDocs,docs,meds,onSelectD
                       {apt.status==='pending'?<span className="animate-spin" style={{display:'inline-block'}}><I n="clock" s={24} c="text-amber-500"/></span>:<I n="calendar" s={24} c="text-teal-600"/>}
                     </div>
                     <div>
-                      <div style={{fontSize:11,fontWeight:700,color:apt.status==='pending'?'var(--c-warn)':'var(--c-accent)',textTransform:'uppercase',letterSpacing:'.05em'}}>{apt.status==='pending'?'Doktor Onayı Bekleniyor...':'Onaylanmış Randevu'}</div>
+                      <div style={{fontSize:11,fontWeight:700,color:apt.status==='pending'?'var(--c-warn)':'var(--c-accent)',textTransform:'uppercase',letterSpacing:'.05em'}}>{apt.status==='pending'?t('appt_awaiting'):t('appt_confirmed_label')}</div>
                       <div style={{fontWeight:700,marginTop:2}}>{apt.docName||apt.specialty}</div>
                       <div style={{fontSize:13,color:'var(--c-muted)',marginTop:1}}>{apt.date} · {apt.time||'-'}</div>
                     </div>
                   </div>
                   <div style={{display:'flex',alignItems:'center',gap:8}}>
-                    <span className="dd-badge" style={{background:apt.status==='pending'?'color-mix(in srgb,var(--c-warn) 12%,transparent)':'color-mix(in srgb,var(--c-accent) 10%,transparent)',color:apt.status==='pending'?'var(--c-warn)':'var(--c-accent)',fontSize:10}}>{apt.status==='pending'?'Bekliyor':'Onaylandı'}</span>
+                    <span className="dd-badge" style={{background:apt.status==='pending'?'color-mix(in srgb,var(--c-warn) 12%,transparent)':'color-mix(in srgb,var(--c-accent) 10%,transparent)',color:apt.status==='pending'?'var(--c-warn)':'var(--c-accent)',fontSize:10}}>{apt.status==='pending'?t('status_pending'):t('status_confirmed')}</span>
                     <I n="chevRight" s={16} c="text-slate-400"/>
                   </div>
                 </div>
@@ -1208,18 +1359,18 @@ function HomeView({onEmergency,onRoutine,visits,user,favDocs,docs,meds,onSelectD
           <div style={{position:'fixed',inset:0,zIndex:200,display:'flex',alignItems:'center',justifyContent:'center',padding:16,background:'rgba(0,0,0,.5)',backdropFilter:'blur(12px)'}} onClick={()=>setSelAppt(null)}>
             <div className="dd-card animate-fadeUp" style={{maxWidth:420,width:'100%',padding:'2rem',borderRadius:24}} onClick={e=>e.stopPropagation()}>
               <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:20}}>
-                <h3 style={{fontSize:'1.25rem',fontWeight:800}}>Appointment Details</h3>
+                <h3 style={{fontSize:'1.25rem',fontWeight:800}}>{t('appt_details')}</h3>
                 <button onClick={()=>setSelAppt(null)} style={{background:'none',border:'none',cursor:'pointer',padding:4,color:'var(--c-muted)'}}><I n="x" s={20}/></button>
               </div>
               <div style={{display:'flex',flexDirection:'column',gap:0}}>
                 {[
-                  ['Doctor',selAppt.docName||selAppt.specialty||'Doctor'],
-                  ['Status',selAppt.status],
-                  ['Date & Time',(selAppt.date==='ASAP'?'ASAP':selAppt.date)+' '+(selAppt.time||'')],
-                  ['Location',(selAppt.address||'Not specified').split('|')[0]?.trim()],
-                  ['Apartment',selAppt.address?.includes('|')?selAppt.address.split('|')[1]?.trim()?.replace(/Apt:/,'').replace(/Floor:/,'Fl:').replace(/Door:/,'Dr:'):'—'],
-                  ['Symptoms',selAppt.sym||'General visit'],
-                  ['Price',selAppt.price?fmtPrice(selAppt.price,selAppt.currency||'TRY'):'—'],
+                  [t('doctor_label'),selAppt.docName||selAppt.specialty||t('doctor_label')],
+                  [t('status_label'),selAppt.status],
+                  [t('date_time'),(selAppt.date==='ASAP'?'ASAP':selAppt.date)+' '+(selAppt.time||'')],
+                  [t('location'),(selAppt.address||t('not_specified')).split('|')[0]?.trim()],
+                  [t('apartment'),selAppt.address?.includes('|')?selAppt.address.split('|')[1]?.trim()?.replace(/Apt:/,'').replace(/Floor:/,'Fl:').replace(/Door:/,'Dr:'):'—'],
+                  [t('symptoms_label'),selAppt.sym||t('general_visit')],
+                  [t('price'),selAppt.price?fmtPrice(selAppt.price,selAppt.currency||'TRY'):'—'],
                 ].map(([label,value],i,arr)=>(
                   <div key={label} style={{display:'flex',justifyContent:'space-between',padding:'12px 0',borderBottom:i<arr.length-1?'1px solid var(--c-border)':'none'}}>
                     <span style={{color:'var(--c-muted)',fontSize:13}}>{label}</span>
@@ -1227,7 +1378,7 @@ function HomeView({onEmergency,onRoutine,visits,user,favDocs,docs,meds,onSelectD
                   </div>
                 ))}
               </div>
-              <button className="dd-btn dd-btn-ghost" onClick={()=>setSelAppt(null)} style={{width:'100%',marginTop:20,border:'1.5px solid var(--c-border)'}}>Close</button>
+              <button className="dd-btn dd-btn-ghost" onClick={()=>setSelAppt(null)} style={{width:'100%',marginTop:20,border:'1.5px solid var(--c-border)'}}>{t('close')}</button>
             </div>
           </div>
         )}
@@ -1237,7 +1388,7 @@ function HomeView({onEmergency,onRoutine,visits,user,favDocs,docs,meds,onSelectD
           <div className="dd-card animate-fadeUp stagger-1" style={{padding:'1rem 1.25rem',marginBottom:16,border:'2px solid color-mix(in srgb,var(--c-accent2) 20%,var(--c-border))',background:'color-mix(in srgb,var(--c-accent2) 3%,var(--c-surface))'}}>
             <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:10}}>
               <div style={{width:36,height:36,borderRadius:12,background:'color-mix(in srgb,var(--c-accent2) 12%,transparent)',display:'flex',alignItems:'center',justifyContent:'center'}}><I n="pill" s={18} c="text-indigo-500"/></div>
-              <div><div style={{fontSize:12,fontWeight:800,color:'var(--c-accent2)',textTransform:'uppercase',letterSpacing:'.05em'}}>Today's Medicines</div></div>
+              <div><div style={{fontSize:12,fontWeight:800,color:'var(--c-accent2)',textTransform:'uppercase',letterSpacing:'.05em'}}>{t('todays_meds')}</div></div>
             </div>
             <div style={{display:'flex',gap:8,overflowX:'auto',paddingBottom:4}}>
               {todayMeds.map(m=>(
@@ -1254,16 +1405,16 @@ function HomeView({onEmergency,onRoutine,visits,user,favDocs,docs,meds,onSelectD
         <div style={{display:'grid',gridTemplateColumns:'1fr',gap:16}}>
           <button className="dd-card animate-fadeUp stagger-2 btn-bounce" onClick={onRoutine} style={{padding:'2rem',textAlign:'center',cursor:'pointer',border:'2px solid color-mix(in srgb,var(--c-accent) 15%,var(--c-border))',transition:'all .3s'}}>
             <div style={{width:64,height:64,borderRadius:20,background:'color-mix(in srgb,var(--c-accent) 10%,transparent)',display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 16px'}}><I n="calendar" s={28} c="text-teal-600"/></div>
-            <h3 style={{fontSize:'1.25rem',fontWeight:800,marginBottom:6}}>Randevu Al</h3>
-            <p style={{color:'var(--c-muted)',fontSize:14,lineHeight:1.5,marginBottom:16}}>Genel kontrol, takip muayenesi veya uzman doktor randevusu.</p>
-            <span style={{color:'var(--c-accent)',fontWeight:700,fontSize:14,fontFamily:'var(--font-display)',display:'inline-flex',alignItems:'center',gap:4}}>Doktorları Gör <LottieAnim name="arrow" size={20} hover style={{filter:'invert(0.4) sepia(1) saturate(5) hue-rotate(130deg)',pointerEvents:'auto'}}/></span>
+            <h3 style={{fontSize:'1.25rem',fontWeight:800,marginBottom:6}}>{t('routine_title')}</h3>
+            <p style={{color:'var(--c-muted)',fontSize:14,lineHeight:1.5,marginBottom:16}}>{t('routine_desc_home')}</p>
+            <span style={{color:'var(--c-accent)',fontWeight:700,fontSize:14,fontFamily:'var(--font-display)',display:'inline-flex',alignItems:'center',gap:4}}>{t('see_doctors')} <LottieAnim name="arrow" size={20} hover style={{filter:'invert(0.4) sepia(1) saturate(5) hue-rotate(130deg)',pointerEvents:'auto'}}/></span>
           </button>
         </div>
 
         {/* Favorite doctors */}
         {favDocList.length>0 && (
           <div className="animate-fadeUp stagger-4" style={{marginTop:20}}>
-            <h3 style={{fontSize:14,fontWeight:700,color:'var(--c-muted)',marginBottom:10,fontFamily:'var(--font-display)',letterSpacing:'.03em'}}>FAVORITE DOCTORS</h3>
+            <h3 style={{fontSize:14,fontWeight:700,color:'var(--c-muted)',marginBottom:10,fontFamily:'var(--font-display)',letterSpacing:'.03em'}}>{t('fav_doctors_title').toUpperCase()}</h3>
             <div style={{display:'flex',gap:12,overflowX:'auto',paddingBottom:4}}>
               {favDocList.map(d=>(
                 <button key={d.id} onClick={()=>onSelectDoc(d)} className="dd-card btn-bounce" style={{minWidth:180,padding:0,textAlign:'left',cursor:'pointer',flexShrink:0,border:'none',overflow:'hidden'}}>
@@ -1286,19 +1437,64 @@ function HomeView({onEmergency,onRoutine,visits,user,favDocs,docs,meds,onSelectD
         {/* Recent visits */}
         {completed.length>0 && (
           <div className="animate-fadeUp stagger-4" style={{marginTop:20}}>
-            <h3 style={{fontSize:14,fontWeight:700,color:'var(--c-muted)',marginBottom:10,fontFamily:'var(--font-display)',letterSpacing:'.03em'}}>RECENT VISITS</h3>
+            <h3 style={{fontSize:14,fontWeight:700,color:'var(--c-muted)',marginBottom:10,fontFamily:'var(--font-display)',letterSpacing:'.03em'}}>{t('recent_visits_title').toUpperCase()}</h3>
             <div style={{display:'flex',gap:10}}>{completed.slice(0,2).map(v=>(
               <button key={v.id} onClick={()=>v.summary&&onViewSummary(v.id)} className="dd-card" style={{flex:1,padding:'14px 16px',display:'flex',alignItems:'center',gap:12,cursor:'pointer',border:'none',textAlign:'left'}}>
                 {v.docImg?<img src={v.docImg} alt="" style={{width:36,height:36,borderRadius:10,objectFit:'cover'}}/>:<div style={{width:36,height:36,borderRadius:10,background:'var(--c-subtle)',display:'flex',alignItems:'center',justifyContent:'center'}}><I n="user" s={16}/></div>}
                 <div><div style={{fontWeight:600,fontSize:13}}>{v.docName||'Doctor'}</div><div style={{fontSize:11,color:'var(--c-muted)'}}>{v.docSpec||v.specialty}</div></div>
-                {v.summary && <span className="dd-badge" style={{background:'color-mix(in srgb,var(--c-accent) 10%,transparent)',color:'var(--c-accent)',marginLeft:'auto'}}>Summary</span>}
+                {v.summary && <span className="dd-badge" style={{background:'color-mix(in srgb,var(--c-accent) 10%,transparent)',color:'var(--c-accent)',marginLeft:'auto'}}>{t('summary_badge')}</span>}
               </button>
             ))}</div>
           </div>
         )}
-        <div className="animate-fadeUp stagger-4" style={{textAlign:'center',marginTop:24,padding:'12px 20px',borderRadius:14,background:'color-mix(in srgb,var(--c-accent) 6%,transparent)',border:'1px solid color-mix(in srgb,var(--c-accent) 12%,transparent)'}}>
-          <p style={{color:'var(--c-accent)',fontSize:12,fontWeight:700,fontFamily:'var(--font-display)',letterSpacing:'.03em'}}><I n="shield" s={14} style={{display:"inline-block",verticalAlign:"text-bottom",marginRight:4}}/>DocDoor — Güvenli ve hızlı sağlık hizmeti aracılığı.</p>
+        {/* Trust badges */}
+        <div className="animate-fadeUp stagger-4" style={{marginTop:24}}>
+          <div style={{display:'flex',gap:8,flexWrap:'wrap',justifyContent:'center',marginBottom:10}}>
+            {[
+              {icon:'shield',label:'KVKK Uyumlu',sub:'VERBİS Kayıtlı',color:'#0d9488',onClick:()=>setShowKvkk(true)},
+              {icon:'credit',label:'iyzico Güvenli Ödeme',sub:'6493 s.K. Lisanslı',color:'#6366f1',onClick:null},
+              {icon:'stethoscope',label:'Malpraktis Güvenceli',sub:'Tüm Doktorlar Sigortalı',color:'#0891b2',onClick:null},
+            ].map(b=>(
+              <div key={b.label} onClick={b.onClick||undefined} style={{display:'flex',alignItems:'center',gap:8,padding:'8px 14px',borderRadius:12,background:'color-mix(in srgb,var(--c-accent) 5%,var(--c-surface))',border:'1px solid color-mix(in srgb,var(--c-border) 80%,transparent)',cursor:b.onClick?'pointer':'default',transition:'all .2s',flex:'0 1 auto'}}>
+                <div style={{width:30,height:30,borderRadius:8,background:`color-mix(in srgb,${b.color} 12%,transparent)`,display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
+                  <I n={b.icon} s={16} style={{color:b.color}}/>
+                </div>
+                <div>
+                  <div style={{fontSize:11,fontWeight:800,color:'var(--c-text)',lineHeight:1.2}}>{b.label}{b.onClick&&<span style={{color:b.color,marginLeft:4,fontSize:10}}>↗</span>}</div>
+                  <div style={{fontSize:10,color:'var(--c-muted)',marginTop:1}}>{b.sub}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p style={{textAlign:'center',color:'var(--c-muted)',fontSize:10,fontWeight:600,letterSpacing:'.04em'}}>
+            <I n="shield" s={11} style={{display:"inline-block",verticalAlign:"text-bottom",marginRight:3}}/>{t('safe_tagline')}
+            &nbsp;·&nbsp;<a href="#" onClick={e=>{e.preventDefault();setShowKvkk(true);}} style={{color:'var(--c-accent)',textDecoration:'underline',fontWeight:700}}>KVKK Politikası</a>
+          </p>
         </div>
+        {/* KVKK quick-info modal */}
+        {showKvkk && (
+          <div style={{position:'fixed',inset:0,zIndex:300,display:'flex',alignItems:'center',justifyContent:'center',padding:16,background:'rgba(0,0,0,.6)',backdropFilter:'blur(12px)'}} onClick={()=>setShowKvkk(false)}>
+            <div className="dd-card animate-fadeUp" style={{maxWidth:480,width:'100%',padding:'1.75rem',borderRadius:24,maxHeight:'80vh',overflowY:'auto'}} onClick={e=>e.stopPropagation()}>
+              <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:16}}>
+                <h3 style={{fontSize:'1rem',fontWeight:800,display:'flex',alignItems:'center',gap:8}}><I n="shield" s={18} style={{color:'#0d9488'}}/>KVKK Aydınlatma Metni</h3>
+                <button onClick={()=>setShowKvkk(false)} style={{background:'none',border:'none',cursor:'pointer',padding:4,color:'var(--c-muted)',fontSize:20}}>✕</button>
+              </div>
+              <div style={{fontSize:12,lineHeight:1.8,color:'var(--c-text)'}}>
+                <p style={{fontWeight:700,color:'var(--c-accent)',marginBottom:8}}>KİŞİSEL VERİLERİN İŞLENMESİNE İLİŞKİN AYDINLATMA METNİ</p>
+                <p style={{marginBottom:8}}><strong>Veri Sorumlusu:</strong> DocDoor Teknoloji Ltd. Şti.</p>
+                <p style={{marginBottom:8}}>6698 sayılı KVKK kapsamında kişisel verileriniz; doktor-hasta eşleştirmesi, randevu yönetimi, ödeme işlemleri ve yasal yükümlülükler amacıyla işlenmektedir.</p>
+                <p style={{fontWeight:700,marginTop:10,marginBottom:4}}>İşlenen Veriler</p>
+                <p>Kimlik (ad, soyad), iletişim (e-posta, adres), sağlık verileri (semptomlar, muayene notları — özel nitelikli), ödeme (kart son 4 hane), konum (randevu için).</p>
+                <p style={{fontWeight:700,marginTop:10,marginBottom:4}}>Aktarım</p>
+                <p>Hizmet veren doktor, iyzico (lisanslı ödeme kuruluşu), özel sigorta şirketi (provizyon), yasal zorunluluk halinde kamu kurumları.</p>
+                <p style={{fontWeight:700,marginTop:10,marginBottom:4}}>Haklarınız (KVKK m.11)</p>
+                <p>Verilerinizin işlenip işlenmediğini öğrenme, bilgi talep etme, düzeltilmesini / silinmesini isteme ve Kişisel Verileri Koruma Kurulu'na şikayette bulunma.</p>
+                <p style={{marginTop:12,color:'var(--c-muted)',fontSize:11}}>İletişim: <strong>kvkk@docdoor.com</strong></p>
+              </div>
+              <button className="dd-btn dd-btn-primary" onClick={()=>setShowKvkk(false)} style={{width:'100%',marginTop:16}}>Anladım</button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -1324,9 +1520,9 @@ function DocsView({docs,favDocs,toggleFav,onSelect,onDetail,onBack}){
       </div>
       {/* Search & Sort */}
       <div className="animate-fadeUp stagger-1" style={{display:'flex',gap:10,marginBottom:16,flexWrap:'wrap'}}>
-        <div style={{flex:1,minWidth:200,position:'relative'}}><span style={{position:"absolute",left:14,top:"50%",transform:"translateY(-50%)",pointerEvents:"none",color:"#94a3b8",display:"flex"}}><I n="search" s={16}/></span><input className="dd-input" style={{paddingLeft:38,padding:'10px 10px 10px 38px'}} placeholder={t('search_doctors')} value={search} onChange={e=>setSearch(e.target.value)}/></div>
+        <div style={{flex:1,minWidth:200,position:'relative'}}><span style={{position:"absolute",left:14,top:"50%",transform:"translateY(-50%)",pointerEvents:"none",color:"var(--c-muted)",display:"flex"}}><I n="search" s={16}/></span><input className="dd-input" style={{paddingLeft:38,padding:'10px 10px 10px 38px'}} placeholder={t('search_doctors')} value={search} onChange={e=>setSearch(e.target.value)}/></div>
         <select className="dd-input" style={{width:'auto',padding:'10px 16px',fontSize:13}} value={sortBy} onChange={e=>setSortBy(e.target.value)}>
-          <option value="rating">⭐ Best rated</option><option value="price">💰 Lowest price</option><option value="eta">⏱ Nearest</option>
+          <option value="rating">{t('sort_best')}</option><option value="price">{t('sort_price')}</option><option value="eta">{t('sort_nearest')}</option>
         </select>
       </div>
       <div className="animate-fadeUp stagger-1" style={{display:'flex',flexWrap:'wrap',gap:8,marginBottom:24}}>
@@ -1339,7 +1535,7 @@ function DocsView({docs,favDocs,toggleFav,onSelect,onDetail,onBack}){
             <div style={{flex:1,minWidth:0}}>
               <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:8}}>
                 <h3 style={{fontSize:'1.0625rem',fontWeight:800,whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{d.name}</h3>
-                <div className="dd-badge" style={{background:'color-mix(in srgb,#f59e0b 12%,transparent)',color:'#d97706',flexShrink:0}}>{(d.reviewCount||0)>0?<><I n="star" s={12} f/> {d.rating}</>:<span style={{fontSize:10}}>New</span>}</div>
+                <div className="dd-badge" style={{background:'color-mix(in srgb,#f59e0b 12%,transparent)',color:'#d97706',flexShrink:0}}>{(d.reviewCount||0)>0?<><I n="star" s={12} f/> {d.rating}</>:<span style={{fontSize:10}}>{t('new_badge')}</span>}</div>
               </div>
               <div style={{color:'var(--c-accent)',fontWeight:600,fontSize:13,marginTop:2}}>{d.specialty}</div>
               <p style={{color:'var(--c-muted)',fontSize:12,marginTop:4,lineHeight:1.4,display:'-webkit-box',WebkitLineClamp:2,WebkitBoxOrient:'vertical',overflow:'hidden'}}>{d.bio}</p>
@@ -1347,16 +1543,16 @@ function DocsView({docs,favDocs,toggleFav,onSelect,onDetail,onBack}){
                 <span style={{display:'flex',alignItems:'center',gap:4}}><I n="clock" s={13}/>{t('available')}: {d.next}</span>
                 <span style={{display:'flex',alignItems:'center',gap:4}}>{fmtPrice(d.price,d.currency)}</span>
                 <span style={{display:'flex',alignItems:'center',gap:4}}><I n="globe" s={13}/>{Array.isArray(d.langs)?d.langs.join(', '):(d.langs||'')}</span>
-                <span style={{display:'flex',alignItems:'center',gap:4}}><I n="msg" s={13}/>{d.reviewCount||0} reviews</span>
+                <span style={{display:'flex',alignItems:'center',gap:4}}><I n="msg" s={13}/>{d.reviewCount||0} {t('reviews_count')}</span>
               </div>
             </div>
             <div style={{display:'flex',flexDirection:'column',alignItems:'flex-end',gap:8,flexShrink:0}}>
               <button onClick={e=>{e.stopPropagation();toggleFav(d.id);}} style={{background:'none',border:'none',cursor:'pointer',padding:4}}><svg width={20} height={20} viewBox="0 0 24 24" fill={favDocs?.includes(d.id)?'#ef4444':'none'} stroke={favDocs?.includes(d.id)?'#ef4444':'var(--c-muted)'} strokeWidth={1.8}><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-              <div className="dd-btn dd-btn-primary" style={{padding:'10px 20px',fontSize:13,display:'flex',alignItems:'center',gap:6}} onClick={e=>{e.stopPropagation();onSelect(d);}}>Book<LottieAnim name="arrow" size={18} hover style={{filter:'invert(1) brightness(2)',pointerEvents:'auto'}}/></div>
+              <div className="dd-btn dd-btn-primary" style={{padding:'10px 20px',fontSize:13,display:'flex',alignItems:'center',gap:6}} onClick={e=>{e.stopPropagation();onSelect(d);}}>{t('book_visit')}<LottieAnim name="arrow" size={18} hover style={{filter:'invert(1) brightness(2)',pointerEvents:'auto'}}/></div>
             </div>
           </div>
         ))}
-        {filtered.length===0 && <div className="dd-card" style={{textAlign:'center',padding:'3rem',borderStyle:'dashed'}}><div style={{fontSize:48,marginBottom:12}}>👨‍⚕️</div><p style={{color:'var(--c-muted)',fontWeight:600,fontSize:16,marginBottom:6}}>No doctors available yet</p><p style={{color:'var(--c-muted)',fontSize:13}}>Doctors will appear here once they create an account and sign up as a doctor.</p></div>}
+        {filtered.length===0 && <div className="dd-card" style={{textAlign:'center',padding:'3rem',borderStyle:'dashed'}}><div style={{fontSize:48,marginBottom:12}}>👨‍⚕️</div><p style={{color:'var(--c-muted)',fontWeight:600,fontSize:16,marginBottom:6}}>{t('no_doctors')}</p><p style={{color:'var(--c-muted)',fontSize:13}}>{t('no_doctors_desc')}</p></div>}
       </div>
     </div></div>
   );
@@ -1364,6 +1560,7 @@ function DocsView({docs,favDocs,toggleFav,onSelect,onDetail,onBack}){
 
 // ═══════ DOCTOR DETAIL MODAL ═══════
 function DoctorDetailModal({doc,isFav,toggleFav,onClose,onSelect}){
+  const {t} = useT();
   const hasReviews = (doc.reviewCount||0) > 0;
   const [showReviews,setShowReviews]=useState(false);
   return (
@@ -1384,13 +1581,13 @@ function DoctorDetailModal({doc,isFav,toggleFav,onClose,onSelect}){
             </div>
             <div style={{textAlign:'right'}}>
               <div style={{fontSize:'1.5rem',fontWeight:900}}>{fmtPrice(doc.price,doc.currency)}</div>
-              <div style={{fontSize:11,color:'var(--c-muted)'}}>per visit</div>
+              <div style={{fontSize:11,color:'var(--c-muted)'}}>{t('per_visit')}</div>
             </div>
           </div>
           <div style={{display:'flex',gap:16,marginTop:16,paddingBottom:16,borderBottom:'1px solid var(--c-border)'}}>
-            {hasReviews ? <div style={{textAlign:'center'}}><div style={{display:'flex',gap:1}}>{Array.from({length:5},(_,i)=><span key={i} style={{color:i<Math.round(doc.rating)?'#f59e0b':'#cbd5e1',fontSize:18}}>★</span>)}</div><div style={{fontSize:11,color:'var(--c-muted)'}}>Rating</div></div>
-              : <div style={{textAlign:'center'}}><div style={{fontWeight:700,fontSize:14,color:'var(--c-muted)'}}>—</div><div style={{fontSize:11,color:'var(--c-muted)'}}>No reviews</div></div>}
-            <div style={{textAlign:'center'}}><div style={{fontWeight:800,fontSize:18}}>{doc.reviewCount||0}</div><div style={{fontSize:11,color:'var(--c-muted)'}}>Reviews</div></div>
+            {hasReviews ? <div style={{textAlign:'center'}}><div style={{display:'flex',gap:1}}>{Array.from({length:5},(_,i)=><span key={i} style={{color:i<Math.round(doc.rating)?'#f59e0b':'#cbd5e1',fontSize:18}}>★</span>)}</div><div style={{fontSize:11,color:'var(--c-muted)'}}>{t('rating_label')}</div></div>
+              : <div style={{textAlign:'center'}}><div style={{fontWeight:700,fontSize:14,color:'var(--c-muted)'}}>—</div><div style={{fontSize:11,color:'var(--c-muted)'}}>{t('no_reviews')}</div></div>}
+            <div style={{textAlign:'center'}}><div style={{fontWeight:800,fontSize:18}}>{doc.reviewCount||0}</div><div style={{fontSize:11,color:'var(--c-muted)'}}>{t('reviews_label')}</div></div>
             <div style={{textAlign:'center'}}><div style={{fontWeight:800,fontSize:18}}>{doc.eta}m</div><div style={{fontSize:11,color:'var(--c-muted)'}}>ETA</div></div>
           </div>
           {doc.bio && <p style={{color:'var(--c-muted)',fontSize:14,lineHeight:1.6,marginTop:16}}>{doc.bio}</p>}
@@ -1399,14 +1596,14 @@ function DoctorDetailModal({doc,isFav,toggleFav,onClose,onSelect}){
           </div>}
           {/* #19: Education & Experience — visible to patients */}
           {(doc.education || doc.experience) && <div style={{marginTop:16,padding:'14px 16px',borderRadius:14,background:'var(--c-subtle)',border:'1px solid var(--c-border)'}}>
-            {doc.education && <div style={{marginBottom:doc.experience?10:0}}><div style={{fontSize:10,fontWeight:800,color:'var(--c-accent)',textTransform:'uppercase',letterSpacing:'.06em',marginBottom:4,display:'flex',alignItems:'center',gap:5}}><I n="award" s={12}/>Education</div><div style={{fontSize:13,fontWeight:600}}>{doc.education}</div></div>}
-            {doc.experience && <div><div style={{fontSize:10,fontWeight:800,color:'var(--c-accent)',textTransform:'uppercase',letterSpacing:'.06em',marginBottom:4,display:'flex',alignItems:'center',gap:5}}><I n="clipboard" s={12}/>Experience</div><div style={{fontSize:13,color:'var(--c-text)',whiteSpace:'pre-line'}}>{doc.experience}</div></div>}
+            {doc.education && <div style={{marginBottom:doc.experience?10:0}}><div style={{fontSize:10,fontWeight:800,color:'var(--c-accent)',textTransform:'uppercase',letterSpacing:'.06em',marginBottom:4,display:'flex',alignItems:'center',gap:5}}><I n="award" s={12}/>{t('education')}</div><div style={{fontSize:13,fontWeight:600}}>{doc.education}</div></div>}
+            {doc.experience && <div><div style={{fontSize:10,fontWeight:800,color:'var(--c-accent)',textTransform:'uppercase',letterSpacing:'.06em',marginBottom:4,display:'flex',alignItems:'center',gap:5}}><I n="clipboard" s={12}/>{t('experience_label')}</div><div style={{fontSize:13,color:'var(--c-text)',whiteSpace:'pre-line'}}>{doc.experience}</div></div>}
           </div>}
           {/* #18: Reviews section — collapsed by default, click to expand */}
           {hasReviews ? (
             <div style={{marginTop:20}}>
               <button onClick={()=>setShowReviews(!showReviews)} style={{display:'flex',alignItems:'center',justifyContent:'space-between',width:'100%',padding:'12px 16px',borderRadius:14,background:'color-mix(in srgb,#f59e0b 6%,transparent)',border:'1.5px solid color-mix(in srgb,#f59e0b 15%,transparent)',cursor:'pointer',transition:'all .2s'}}>
-                <span style={{fontWeight:700,fontSize:14,color:'#b45309',display:'flex',alignItems:'center',gap:8}}><I n="star" s={16}/>Patient Reviews ({doc.reviewCount})</span>
+                <span style={{fontWeight:700,fontSize:14,color:'#b45309',display:'flex',alignItems:'center',gap:8}}><I n="star" s={16}/>{t('patient_reviews')} ({doc.reviewCount})</span>
                 <I n={showReviews?'chevUp':'chevDown'} s={16} style={{color:'#b45309',transition:'transform .3s'}}/>
               </button>
               {showReviews && <div style={{display:'flex',flexDirection:'column',gap:10,marginTop:10}} className="animate-fadeUp">
@@ -1422,9 +1619,9 @@ function DoctorDetailModal({doc,isFav,toggleFav,onClose,onSelect}){
               </div>}
             </div>
           ) : (
-            <div style={{textAlign:'center',padding:'1.25rem',color:'var(--c-muted)',fontSize:13,background:'var(--c-subtle)',borderRadius:14,marginTop:20}}>No reviews yet. Be the first to review!</div>
+            <div style={{textAlign:'center',padding:'1.25rem',color:'var(--c-muted)',fontSize:13,background:'var(--c-subtle)',borderRadius:14,marginTop:20}}>{t('no_reviews_first')}</div>
           )}
-          <button className="dd-btn dd-btn-primary" onClick={()=>onSelect(doc)} style={{width:'100%',marginTop:20,padding:'1rem',display:'flex',alignItems:'center',justifyContent:'center',gap:8}}>Book with {doc.name.split(' ')[1]||doc.name}<LottieAnim name="arrow" size={20} hover style={{filter:'invert(1) brightness(2)',pointerEvents:'auto'}}/></button>
+          <button className="dd-btn dd-btn-primary" onClick={()=>onSelect(doc)} style={{width:'100%',marginTop:20,padding:'1rem',display:'flex',alignItems:'center',justifyContent:'center',gap:8}}>{t('book_with')} {doc.name.split(' ')[1]||doc.name}<LottieAnim name="arrow" size={20} hover style={{filter:'invert(1) brightness(2)',pointerEvents:'auto'}}/></button>
         </div>
       </div>
     </div>
@@ -1520,15 +1717,15 @@ function BookingView({doc,tri,initSym,onConfirm,onBack,user,savedCards}){
   const getLoc = ()=>{setLocL(true);if("geolocation" in navigator)navigator.geolocation.getCurrentPosition(p=>{setAddr(`${p.coords.latitude.toFixed(4)}, ${p.coords.longitude.toFixed(4)}`);setIsGPS(true);setLocL(false);},()=>{toast('Location unavailable','error');setLocL(false);});else{toast('Geolocation not supported','error');setLocL(false);}};
   // TC Kimlik sigorta sorgulama
   const verifyInsurance = async ()=>{
-    if(tcKimlik.length!==11){toast('TC Kimlik 11 haneli olmalı','warning');return;}
+    if(tcKimlik.length!==11){toast(t('err_tc_length'),'warning');return;}
     setInsLoading(true);setInsRecords([]);setSelectedIns(null);setInsVerified(false);setInsClaim(null);
     try{
       const token=localStorage.getItem('dd_token');
       const r=await fetch('/api/insurance/verify',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({tcKimlik})});
       const d=await r.json();
-      if(r.ok&&d.records?.length>0){setInsRecords(d.records);setSelectedIns(d.records[0]);setInsVerified(true);toast(`${d.records.length} sigorta bulundu!`,'success');}
-      else{toast(d.message||d.error||'Sigorta bulunamadı','warning');}
-    }catch(e){toast('Sigorta sorgulama hatası','error');}
+      if(r.ok&&d.records?.length>0){setInsRecords(d.records);setSelectedIns(d.records[0]);setInsVerified(true);toast(t('insurance_found',{n:d.records.length}),'success');}
+      else{toast(d.message||d.error||t('insurance_not_found'),'warning');}
+    }catch(e){toast(t('insurance_error'),'error');}
     setInsLoading(false);
   };
   // Sigorta claim gönder
@@ -1543,7 +1740,7 @@ function BookingView({doc,tri,initSym,onConfirm,onBack,user,savedCards}){
   const aptDetails = [aptName?'Apt:'+aptName:'',floor?'Floor:'+floor:'',doorNo?'Door:'+doorNo:''].filter(Boolean).join(', ');
   const fullAddr = isGPS ? `GPS:${addr}${streetAddr?' | '+streetAddr:''}${aptDetails?' | '+aptDetails:''}` : `${streetAddr}${aptDetails?' | '+aptDetails:''}`;
   const addrComplete = isGPS ? (addr.trim()&&aptName.trim()&&floor.trim()&&doorNo.trim()) : (province.trim()&&district.trim()&&neighborhood.trim()&&street.trim()&&aptName.trim()&&floor.trim()&&doorNo.trim());
-  const submit = ()=>{if(!addrComplete){toast('Lütfen tüm adres alanlarını doldurun','warning');return;}if(mode!=='ASAP'&&!time){toast('Lütfen bir saat seçin','warning');return;}if(!payOk()){toast('Ödeme bilgilerini tamamlayın','warning');return;}if(!informedConsent){toast('Aydınlatılmış onam onayı gerekli','warning');return;}if(!distanceContract){toast('Mesafeli sözleşme onayı gerekli','warning');return;}setShowConf(true);};
+  const submit = ()=>{if(!addrComplete){toast(t('err_address_required'),'warning');return;}if(mode!=='ASAP'&&!time){toast(t('err_time_required'),'warning');return;}if(!payOk()){toast(t('err_payment_required'),'warning');return;}if(!informedConsent){toast(t('err_informed_consent'),'warning');return;}if(!distanceContract){toast(t('err_distance_contract'),'warning');return;}setShowConf(true);};
   const final = async ()=>{
     setPayLoading(true);
     try{
@@ -1698,10 +1895,10 @@ function BookingView({doc,tri,initSym,onConfirm,onBack,user,savedCards}){
                 const isBooked = bookedSlots.includes(s);
                 const past = isPastSlot(s);
                 const canSelect = !isBooked && !past;
-                return <button key={s} type="button" onClick={()=>canSelect&&setTime(s)} disabled={!canSelect} style={{padding:'10px 0',borderRadius:10,fontSize:12,fontWeight:700,fontFamily:'var(--font-display)',cursor:canSelect?'pointer':'not-allowed',border:'1.5px solid',transition:'all .2s',background:time===s?'var(--c-accent)':past?'var(--c-subtle)':isBooked?'#334155':'transparent',color:time===s?'white':past?'var(--c-muted)':isBooked?'#94a3b8':'var(--c-text)',borderColor:time===s?'var(--c-accent)':past?'var(--c-border)':isBooked?'#475569':'var(--c-border)',opacity:canSelect||time===s?1:0.45}}>{s}{isBooked?' ✗':past?' ·':''}</button>;
+                return <button key={s} type="button" onClick={()=>canSelect&&setTime(s)} disabled={!canSelect} style={{padding:'10px 0',borderRadius:10,fontSize:12,fontWeight:700,fontFamily:'var(--font-display)',cursor:canSelect?'pointer':'not-allowed',border:'1.5px solid',transition:'all .2s',background:time===s?'var(--c-accent)':past?'var(--c-subtle)':isBooked?'var(--c-subtle)':'transparent',color:time===s?'white':past?'var(--c-muted)':isBooked?'var(--c-muted)':'var(--c-text)',borderColor:time===s?'var(--c-accent)':past?'var(--c-border)':isBooked?'var(--c-border)':'var(--c-border)',opacity:canSelect||time===s?1:0.45}}>{s}{isBooked?' ✗':past?' ·':''}</button>;
               })}</div>}
               {isToday && slotsToShow.length>0 && <div style={{fontSize:11,color:'var(--c-muted)',display:'flex',alignItems:'center',gap:6,marginTop:4}}><div style={{width:12,height:12,borderRadius:4,background:'var(--c-subtle)',border:'1px solid var(--c-border)'}}/> Past time</div>}
-              {bookedSlots.length>0 && slotsToShow.length>0 && <div style={{fontSize:11,color:'var(--c-muted)',display:'flex',alignItems:'center',gap:6}}><div style={{width:12,height:12,borderRadius:4,background:'#334155'}}/> Already booked</div>}
+              {bookedSlots.length>0 && slotsToShow.length>0 && <div style={{fontSize:11,color:'var(--c-muted)',display:'flex',alignItems:'center',gap:6}}><div style={{width:12,height:12,borderRadius:4,background:'var(--c-subtle)',border:'1px solid var(--c-border)'}}/> Already booked</div>}
             </div>}
             {mode==='ASAP' && <div style={{padding:16,borderRadius:16,background:'color-mix(in srgb,var(--c-warn) 8%,transparent)',border:'1px solid color-mix(in srgb,var(--c-warn) 18%,transparent)',display:'flex',gap:12,alignItems:'flex-start'}}><I n="clock" s={20} c="text-amber-500" style={{flexShrink:0,marginTop:2}}/><div><div style={{fontWeight:700,fontSize:14,color:'#b45309'}}>Estimated: {doc?`~${doc.eta} min`:'45-60 min'}</div><div style={{fontSize:12,color:'#92400e',marginTop:2}}>Nearest available doctor dispatched immediately</div></div></div>}
             {/* Payment */}
@@ -1778,7 +1975,7 @@ function BookingView({doc,tri,initSym,onConfirm,onBack,user,savedCards}){
             <div style={{fontSize:11,fontWeight:800,color:'var(--c-muted)',textTransform:'uppercase',letterSpacing:'.05em'}}>Yasal Onaylar</div>
             <label style={{display:'flex',gap:10,alignItems:'flex-start',fontSize:11,cursor:'pointer',lineHeight:1.4}}>
               <input type="checkbox" checked={informedConsent} onChange={e=>setInformedConsent(e.target.checked)} style={{marginTop:2,accentColor:'var(--c-accent)',flexShrink:0}}/>
-              <span><strong>Aydınlatılmış Onam:</strong> Evde muayene hizmetinin hastane ortamından farklı olduğunu, acil durumlarda 112\'nin aranacağını, doktorun bağımsız yüklenici olarak hizmet verdiğini ve platformun tıbbi sorumluluk taşımadığını anladım, kabul ediyorum.</span>
+              <span><strong>Aydınlatılmış Onam:</strong> Evde muayene hizmetinin hastane ortamından farklı olduğunu, acil durumlarda {getEmergencyNumber(user?.country)}'nin aranacağını, doktorun bağımsız yüklenici olarak hizmet verdiğini ve platformun tıbbi sorumluluk taşımadığını anladım, kabul ediyorum.</span>
             </label>
             <label style={{display:'flex',gap:10,alignItems:'flex-start',fontSize:11,cursor:'pointer',lineHeight:1.4}}>
               <input type="checkbox" checked={distanceContract} onChange={e=>setDistanceContract(e.target.checked)} style={{marginTop:2,accentColor:'var(--c-accent)',flexShrink:0}}/>
@@ -2048,11 +2245,11 @@ function VisitsView({visits,onBack,onRebook,onViewSummary,docs,role}){
   return (
     <div className="dd-page"><div style={{maxWidth:800,margin:'0 auto',width:'100%'}}>
       <div className="animate-fadeUp" style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:24}}>
-        <div><h2 style={{fontSize:'1.5rem',fontWeight:800}}>{isDoc?'Hasta Geçmişi':t('my_visits')}</h2><p style={{color:'var(--c-muted)',fontSize:14,marginTop:4}}>{isDoc?'Gelen hastalarınız ve ziyaret geçmişi':'Your appointments and visit history'}</p></div>
+        <div><h2 style={{fontSize:'1.5rem',fontWeight:800}}>{isDoc?t('patient_history_title'):t('my_visits')}</h2><p style={{color:'var(--c-muted)',fontSize:14,marginTop:4}}>{isDoc?t('patient_history_sub'):t('visits_sub')}</p></div>
         <button className="dd-btn dd-btn-ghost" onClick={onBack} style={{fontSize:13}}><I n="arrowLeft" s={16}/>{t('back')}</button>
       </div>
       <div className="animate-fadeUp stagger-1" style={{display:'inline-flex',padding:4,borderRadius:14,background:'var(--c-surface)',border:'1px solid var(--c-border)',marginBottom:20}}>
-        {[['upcoming','Upcoming'],['history','History']].map(([k,l])=><button key={k} onClick={()=>setTab(k)} style={{padding:'8px 18px',borderRadius:10,fontSize:13,fontWeight:700,fontFamily:'var(--font-display)',cursor:'pointer',border:'none',background:tab===k?'var(--c-subtle)':'transparent',color:tab===k?'var(--c-text)':'var(--c-muted)',transition:'all .2s',whiteSpace:'nowrap'}}>{l}</button>)}
+        {[['upcoming',t('tab_upcoming')],['history',t('tab_history')]].map(([k,l])=><button key={k} onClick={()=>setTab(k)} style={{padding:'8px 18px',borderRadius:10,fontSize:13,fontWeight:700,fontFamily:'var(--font-display)',cursor:'pointer',border:'none',background:tab===k?'var(--c-subtle)':'transparent',color:tab===k?'var(--c-text)':'var(--c-muted)',transition:'all .2s',whiteSpace:'nowrap'}}>{l}</button>)}
       </div>
 
       <div style={{display:'flex',flexDirection:'column',gap:12}}>
@@ -2071,16 +2268,16 @@ function VisitsView({visits,onBack,onRebook,onViewSummary,docs,role}){
               {v.price>0 && <span style={{fontWeight:600}}>{fmtPrice(v.price,v.currency||'TRY')}</span>}
               {v.rating && <span style={{display:'flex',alignItems:'center',gap:2}}>⭐ {v.rating}/5</span>}
               <div style={{marginLeft:'auto',display:'flex',gap:6}}>
-                {v.summary && onViewSummary && <button onClick={()=>onViewSummary(v.id)} className="btn-bounce" style={{padding:'4px 12px',borderRadius:8,fontSize:11,fontWeight:700,border:'1.5px solid var(--c-accent)',background:'transparent',color:'var(--c-accent)',cursor:'pointer'}}>Summary</button>}
-                {v.status==='completed' && vDoc && onRebook && !isDoc && <button onClick={()=>onRebook(vDoc)} className="btn-bounce" style={{padding:'4px 12px',borderRadius:8,fontSize:11,fontWeight:700,border:'1.5px solid var(--c-border)',background:'transparent',color:'var(--c-text)',cursor:'pointer',display:'flex',alignItems:'center',gap:4}}><I n="repeat" s={12}/>Rebook</button>}
+                {v.summary && onViewSummary && <button onClick={()=>onViewSummary(v.id)} className="btn-bounce" style={{padding:'4px 12px',borderRadius:8,fontSize:11,fontWeight:700,border:'1.5px solid var(--c-accent)',background:'transparent',color:'var(--c-accent)',cursor:'pointer'}}>{t('btn_summary')}</button>}
+                {v.status==='completed' && vDoc && onRebook && !isDoc && <button onClick={()=>onRebook(vDoc)} className="btn-bounce" style={{padding:'4px 12px',borderRadius:8,fontSize:11,fontWeight:700,border:'1.5px solid var(--c-border)',background:'transparent',color:'var(--c-text)',cursor:'pointer',display:'flex',alignItems:'center',gap:4}}><I n="repeat" s={12}/>{t('btn_rebook')}</button>}
               </div>
             </div>
           </div>
         );}):(
           <div className="dd-card" style={{textAlign:'center',padding:'3rem',borderStyle:'dashed'}}>
             <I n="calendar" s={36} style={{display:'block',margin:'0 auto 12px',color:'#cbd5e1'}}/>
-            <h3 style={{fontWeight:700,marginBottom:4}}>No {tab} visits</h3>
-            <p style={{color:'var(--c-muted)',fontSize:14}}>Your appointments will show here.</p>
+            <h3 style={{fontWeight:700,marginBottom:4}}>{t('no_visits')}</h3>
+            <p style={{color:'var(--c-muted)',fontSize:14}}>{t('visits_show_here')}</p>
           </div>
         )}
       </div>
@@ -2090,12 +2287,13 @@ function VisitsView({visits,onBack,onRebook,onViewSummary,docs,role}){
 
 // ═══════ FAVORITE DOCTORS VIEW ═══════
 function FavsView({docs,favDocs,toggleFav,onSelectDoc,onDetail,onBack}){
+  const {t} = useT();
   const favDocList = (docs||[]).filter(d=>(favDocs||[]).includes(d.id));
   return (
     <div className="dd-page"><div style={{maxWidth:800,margin:'0 auto',width:'100%'}}>
       <div className="animate-fadeUp" style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:24}}>
-        <div><h2 style={{fontSize:'1.5rem',fontWeight:800}}>Favorite Doctors</h2><p style={{color:'var(--c-muted)',fontSize:14,marginTop:4}}>Quick access to your preferred doctors</p></div>
-        <button className="dd-btn dd-btn-ghost" onClick={onBack} style={{fontSize:13}}><I n="arrowLeft" s={16}/>Back</button>
+        <div><h2 style={{fontSize:'1.5rem',fontWeight:800}}>{t('fav_doctors_title')}</h2><p style={{color:'var(--c-muted)',fontSize:14,marginTop:4}}>{t('fav_sub')}</p></div>
+        <button className="dd-btn dd-btn-ghost" onClick={onBack} style={{fontSize:13}}><I n="arrowLeft" s={16}/>{t('back')}</button>
       </div>
       {favDocList.length>0 ? <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))',gap:14}}>
         {favDocList.map((d,i)=>(
@@ -2108,23 +2306,23 @@ function FavsView({docs,favDocs,toggleFav,onSelectDoc,onDetail,onBack}){
                   <div style={{fontWeight:800,fontSize:15}}>{d.name}</div>
                   <div style={{color:'var(--c-accent)',fontSize:13,fontWeight:600,marginTop:2}}>{d.specialty}</div>
                   <div style={{display:'flex',gap:10,marginTop:4,fontSize:12,color:'var(--c-muted)'}}>
-                    {(d.reviewCount||0)>0 ? <span style={{fontWeight:700,color:'#f59e0b'}}>★ {d.rating}</span> : <span style={{fontStyle:'italic'}}>New doctor</span>}
+                    {(d.reviewCount||0)>0 ? <span style={{fontWeight:700,color:'#f59e0b'}}>★ {d.rating}</span> : <span style={{fontStyle:'italic'}}>{t('new_doctor')}</span>}
                     <span style={{fontWeight:700}}>{fmtPrice(d.price||150,d.currency)}</span>
                     <span>{Array.isArray(d.langs)?d.langs.slice(0,2).join(', '):''}</span>
                   </div>
                 </div>
               </div>
               <div style={{display:'flex',gap:8}}>
-                <button onClick={e=>{e.stopPropagation();toggleFav&&toggleFav(d.id);}} style={{flex:1,padding:'8px',borderRadius:10,fontSize:11,fontWeight:700,border:'1.5px solid var(--c-danger)',background:'color-mix(in srgb,var(--c-danger) 6%,transparent)',color:'var(--c-danger)',cursor:'pointer'}}>♥ Remove</button>
-                <button onClick={e=>{e.stopPropagation();onSelectDoc&&onSelectDoc(d);}} className="dd-btn dd-btn-primary" style={{flex:1.5,padding:'8px 16px',fontSize:12,display:'flex',alignItems:'center',justifyContent:'center',gap:6}}>Book Visit<LottieAnim name="arrow" size={16} hover style={{filter:'invert(1) brightness(2)',pointerEvents:'auto'}}/></button>
+                <button onClick={e=>{e.stopPropagation();toggleFav&&toggleFav(d.id);}} style={{flex:1,padding:'8px',borderRadius:10,fontSize:11,fontWeight:700,border:'1.5px solid var(--c-danger)',background:'color-mix(in srgb,var(--c-danger) 6%,transparent)',color:'var(--c-danger)',cursor:'pointer'}}>{t('fav_remove')}</button>
+                <button onClick={e=>{e.stopPropagation();onSelectDoc&&onSelectDoc(d);}} className="dd-btn dd-btn-primary" style={{flex:1.5,padding:'8px 16px',fontSize:12,display:'flex',alignItems:'center',justifyContent:'center',gap:6}}>{t('fav_book_visit')}<LottieAnim name="arrow" size={16} hover style={{filter:'invert(1) brightness(2)',pointerEvents:'auto'}}/></button>
               </div>
             </div>
           </div>
         ))}
       </div> : <div className="dd-card" style={{textAlign:'center',padding:'3rem',borderStyle:'dashed'}}>
         <I n="heart" s={36} style={{display:'block',margin:'0 auto 12px',color:'#cbd5e1'}}/>
-        <h3 style={{fontWeight:700,marginBottom:4}}>No favorite doctors</h3>
-        <p style={{color:'var(--c-muted)',fontSize:14}}>Heart a doctor to add them here.</p>
+        <h3 style={{fontWeight:700,marginBottom:4}}>{t('no_favs')}</h3>
+        <p style={{color:'var(--c-muted)',fontSize:14}}>{t('no_favs_sub')}</p>
       </div>}
     </div></div>
   );

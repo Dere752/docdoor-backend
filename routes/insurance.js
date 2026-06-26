@@ -2,22 +2,13 @@ const express = require('express');
 const { v4: uuid } = require('uuid');
 const { getDb } = require('../db/init');
 const { authMiddleware } = require('../middleware/auth');
+const { validateTCKimlik } = require('../utils/validators');
 const router = express.Router();
 
 // ═══ YALNIZCA ÖZEL SİGORTA SORGULAMASI ═══
 // HUKUK: SGK/Medula yalnızca sözleşmeli sağlık kuruluşlarına açıktır.
 // Platform sağlık kuruluşu değildir. SGK sorgulaması yapılamaz.
 const MOCK_MODE = !process.env.PRIVATE_INSURANCE_API_KEY;
-
-function validateTCKimlik(tc) {
-  if (!tc || tc.length !== 11 || tc[0] === '0') return false;
-  const d = tc.split('').map(Number);
-  if (d.some(x => isNaN(x))) return false;
-  const c10 = ((d[0]+d[2]+d[4]+d[6]+d[8])*7 - (d[1]+d[3]+d[5]+d[7])) % 10;
-  if (((c10 % 10) + 10) % 10 !== d[9]) return false;
-  if (d.slice(0,10).reduce((a,b)=>a+b,0) % 10 !== d[10]) return false;
-  return true;
-}
 
 const providers = {
   'acibadem': { name: 'Acıbadem Sigorta', rate: 0.80, max: 1000 },

@@ -3,6 +3,14 @@
 > A full-stack platform that lets patients book on-demand home-visit doctors, manage prescriptions and insurance, pay securely, and receive real-time updates — with an AI health assistant and a full admin back-office.
 
 <p align="left">
+  <a href="https://github.com/Dere752/docdoor-backend/actions/workflows/ci.yml">
+    <img src="https://github.com/Dere752/docdoor-backend/actions/workflows/ci.yml/badge.svg" alt="CI"/>
+  </a>
+  <img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square"/>
+  <img src="https://img.shields.io/badge/tests-11%20passing-brightgreen?style=flat-square"/>
+</p>
+
+<p align="left">
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white"/>
   <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white"/>
   <img src="https://img.shields.io/badge/WebSocket-010101?style=flat-square&logo=socketdotio&logoColor=white"/>
@@ -103,11 +111,29 @@ See [`.env.example`](.env.example). Summary:
 
 ---
 
+## 🧪 Testing & CI
+
+Unit tests run on Node's built-in test runner (zero dependencies):
+
+```bash
+npm test
+```
+
+Covered today: the **TC Kimlik (national ID) checksum validator** and the **security middleware** (XSS input sanitizer + hardening headers). Every push and pull request is automatically tested on **Node 20 & 22** via **GitHub Actions** ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
+
+---
+
 ## 🧰 Tech Stack
 
 **Backend:** Node.js · Express · `ws` (WebSocket) · SQLite (`sql.js`) · JWT · bcrypt
 **Frontend:** React (Babel-compiled JSX) · PWA · Lottie
 **Integrations:** iyzico · SGK/Medula · Anthropic AI
+
+---
+
+## 📄 License
+
+Released under the [MIT License](LICENSE).
 
 ---
 

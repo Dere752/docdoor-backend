@@ -24,13 +24,16 @@ function rateLimit(opts = {}) {
   };
 }
 
-// Clean up old entries every 5 minutes
-setInterval(() => {
+// Clean up old entries every 5 minutes.
+// .unref() lets the process exit even if this timer is pending
+// (e.g. during tests or graceful shutdown).
+const cleanupTimer = setInterval(() => {
   const now = Date.now();
   for (const [key, entry] of rateWindows) {
     if (now > entry.resetTime) rateWindows.delete(key);
   }
 }, 300000);
+if (typeof cleanupTimer.unref === 'function') cleanupTimer.unref();
 
 // Security headers (like helmet but lightweight)
 function securityHeaders(req, res, next) {
