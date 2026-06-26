@@ -30,6 +30,18 @@ I built the **entire stack myself** — database schema, REST + WebSocket API, a
 
 ---
 
+## 📚 Documentation
+
+This project was designed as a complete product, with documentation beyond the code (see [`docs/`](docs/)):
+
+- 📐 [**Technical Project Report**](docs/PROJECT-REPORT.md) — architecture, stack rationale, engineering decisions, testing
+- 🎯 [**SWOT Analysis**](docs/SWOT-ANALYSIS.md) — weighted strategic assessment + TOWS matrix
+- 🧭 [**Strategic Evaluation**](docs/STRATEGY.md) — business model, 5-phase roadmap, risk analysis
+- ⚖️ [**Legal & Regulatory Analysis**](docs/LEGAL-ANALYSIS.md) — health regulation, KVKK, payments, labor law
+- 📊 [**Pitch Summary**](docs/PITCH.md) — problem, solution, market, competitive advantage
+
+---
+
 ## 📸 Screenshots
 
 | Sign in | Patient home |
