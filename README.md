@@ -30,6 +30,18 @@ I built the **entire stack myself** — database schema, REST + WebSocket API, a
 
 ---
 
+## 📸 Screenshots
+
+| Sign in | Patient home |
+|---------|--------------|
+| ![Login](screenshots/01-login.png) | ![Home](screenshots/02-home-light.png) |
+
+| Dark mode |
+|-----------|
+| ![Dark mode](screenshots/03-home-dark.png) |
+
+---
+
 ## ✨ Key Features
 
 - **🔐 Authentication & Security** — JWT (separate patient/admin secrets), bcrypt password hashing, per-route rate limiting, input sanitization (XSS protection), security headers and an audit log.
