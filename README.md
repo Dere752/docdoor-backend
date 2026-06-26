@@ -44,13 +44,13 @@ This project was designed as a complete product, with documentation beyond the c
 
 ## 📸 Screenshots
 
-| Sign in | Patient home |
-|---------|--------------|
-| ![Login](screenshots/01-login.png) | ![Home](screenshots/02-home-light.png) |
+| Sign in | Browse doctors |
+|---------|----------------|
+| ![Login](screenshots/01-login.png) | ![Doctors](screenshots/02-doctors.png) |
 
-| Dark mode |
-|-----------|
-| ![Dark mode](screenshots/03-home-dark.png) |
+| Book a home visit | Confirm booking |
+|-------------------|-----------------|
+| ![Booking](screenshots/03-booking.png) | ![Confirmation](screenshots/04-confirmation.png) |
 
 ---
 
