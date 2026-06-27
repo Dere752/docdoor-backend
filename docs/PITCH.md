@@ -35,12 +35,12 @@ A large, almost-undigitized home-health market (multi-billion ₺ TAM) concentra
 
 ## 5. Current Status & Traction
 
-- ✅ **MVP** — fully functional PWA web app
-- ✅ **Payments** — iyzico integration (pre-auth + capture)
-- ✅ **Insurance** — private-insurance eligibility check (national-ID based)
-- ✅ **Admin** — comprehensive admin panel
-- ✅ **Legal** — KVKK-compliant, regulation-aware design
-- 🔄 **Doctors** — first cohort onboarding
+- **MVP** — fully functional PWA web app
+- **Payments** — iyzico integration (pre-auth + capture)
+- **Insurance** — private-insurance eligibility check (national-ID based)
+- **Admin** — comprehensive admin panel
+- **Legal** — KVKK-compliant, regulation-aware design
+- **Doctors** — first cohort onboarding (in progress)
 
 ## 6. Competitive Advantage
 
