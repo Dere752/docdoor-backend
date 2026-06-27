@@ -1,4 +1,4 @@
-# 🩺 DocDoor — Home-Visit Doctor & Telemedicine Platform
+# DocDoor — Home-Visit Doctor & Telemedicine Platform
 
 > A full-stack platform that lets patients book on-demand home-visit doctors, manage prescriptions and insurance, pay securely, and receive real-time updates — with an AI health assistant and a full admin back-office.
 
@@ -22,7 +22,7 @@
 
 ---
 
-## 📖 Overview
+## Overview
 
 **DocDoor** ("doctor at your door") is a telemedicine / house-call platform I designed and built end-to-end. A patient can browse verified doctors, book a visit, pay with a card, file an insurance claim, chat with an AI symptom assistant, and follow their appointment status live. Administrators get a complete back-office to manage users, doctors, payments, insurance claims and complaints.
 
@@ -30,19 +30,19 @@ I built the **entire stack myself** — database schema, REST + WebSocket API, a
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 This project was designed as a complete product, with documentation beyond the code (see [`docs/`](docs/)):
 
-- 📐 [**Technical Project Report**](docs/PROJECT-REPORT.md) — architecture, stack rationale, engineering decisions, testing
-- 🎯 [**SWOT Analysis**](docs/SWOT-ANALYSIS.md) — weighted strategic assessment + TOWS matrix
-- 🧭 [**Strategic Evaluation**](docs/STRATEGY.md) — business model, 5-phase roadmap, risk analysis
-- ⚖️ [**Legal & Regulatory Analysis**](docs/LEGAL-ANALYSIS.md) — health regulation, KVKK, payments, labor law
-- 📊 [**Pitch Summary**](docs/PITCH.md) — problem, solution, market, competitive advantage
+- [**Technical Project Report**](docs/PROJECT-REPORT.md) — architecture, stack rationale, engineering decisions, testing
+- [**SWOT Analysis**](docs/SWOT-ANALYSIS.md) — weighted strategic assessment + TOWS matrix
+- [**Strategic Evaluation**](docs/STRATEGY.md) — business model, 5-phase roadmap, risk analysis
+- [**Legal & Regulatory Analysis**](docs/LEGAL-ANALYSIS.md) — health regulation, KVKK, payments, labor law
+- [**Pitch Summary**](docs/PITCH.md) — problem, solution, market, competitive advantage
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 | Sign in | Browse doctors |
 |---------|----------------|
@@ -54,22 +54,22 @@ This project was designed as a complete product, with documentation beyond the c
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- **🔐 Authentication & Security** — JWT (separate patient/admin secrets), bcrypt password hashing, per-route rate limiting, input sanitization (XSS protection), security headers and an audit log.
-- **👨‍⚕️ Doctor Directory & Scheduling** — Browse doctors, view availability, book and track home visits.
-- **💊 Prescriptions & Medications** — Manage medications and visit records per patient.
-- **💳 Payments (iyzico)** — Pre-authorization on booking → capture after the visit, with a 12-hour full-refund window. Falls back to a **mock provider** when no API key is set, so the project runs out of the box.
-- **🏥 Insurance (SGK / Medula + Private)** — Claim eligibility by national ID, automatic coverage-rate and co-pay calculation. Mock mode included.
-- **🤖 AI Health Assistant** — Symptom guidance powered by the Anthropic API.
-- **🔔 Real-time Notifications** — Live appointment/status updates over a custom **WebSocket** sync layer.
-- **🌍 Internationalization** — Full UI in **English, Turkish, Spanish and German**.
-- **🛠️ Admin Panel** — Dashboard, user/doctor management, payments, insurance claims, doctor payouts, complaints, system settings and audit trail.
-- **📱 PWA** — Installable app with manifest and Lottie animations; JSX is compiled on the fly with Babel.
+- **Authentication & Security** — JWT (separate patient/admin secrets), bcrypt password hashing, per-route rate limiting, input sanitization (XSS protection), security headers and an audit log.
+- **Doctor Directory & Scheduling** — Browse doctors, view availability, book and track home visits.
+- **Prescriptions & Medications** — Manage medications and visit records per patient.
+- **Payments (iyzico)** — Pre-authorization on booking, capture after the visit, with a 12-hour full-refund window. Falls back to a **mock provider** when no API key is set, so the project runs out of the box.
+- **Insurance (SGK / Medula + Private)** — Claim eligibility by national ID, automatic coverage-rate and co-pay calculation. Mock mode included.
+- **AI Health Assistant** — Symptom guidance powered by the Anthropic API.
+- **Real-time Notifications** — Live appointment/status updates over a custom **WebSocket** sync layer.
+- **Internationalization** — Full UI in **English, Turkish, Spanish and German**.
+- **Admin Panel** — Dashboard, user/doctor management, payments, insurance claims, doctor payouts, complaints, system settings and audit trail.
+- **PWA** — Installable app with manifest and Lottie animations; JSX is compiled on the fly with Babel.
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
                     ┌─────────────────────────────┐
@@ -93,7 +93,7 @@ This project was designed as a complete product, with documentation beyond the c
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ```bash
 # 1. Clone
@@ -121,7 +121,7 @@ All third-party integrations (payments, insurance, AI) run in **mock mode** when
 
 ---
 
-## ⚙️ Environment Variables
+## Environment Variables
 
 See [`.env.example`](.env.example). Summary:
 
@@ -135,7 +135,7 @@ See [`.env.example`](.env.example). Summary:
 
 ---
 
-## 🧪 Testing & CI
+## Testing & CI
 
 Unit tests run on Node's built-in test runner (zero dependencies):
 
@@ -143,11 +143,11 @@ Unit tests run on Node's built-in test runner (zero dependencies):
 npm test
 ```
 
-Covered today: the **TC Kimlik (national ID) checksum validator** and the **security middleware** (XSS input sanitizer + hardening headers). Every push and pull request is automatically tested on **Node 20 & 22** via **GitHub Actions** ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
+Covered: the **TC Kimlik (national ID) checksum validator** and the **security middleware** (XSS input sanitizer + hardening headers). Every push and pull request is automatically tested on **Node 20 & 22** via **GitHub Actions** ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 **Backend:** Node.js · Express · `ws` (WebSocket) · SQLite (`sql.js`) · JWT · bcrypt
 **Frontend:** React (Babel-compiled JSX) · PWA · Lottie
@@ -155,15 +155,15 @@ Covered today: the **TC Kimlik (national ID) checksum validator** and the **secu
 
 ---
 
-## 📄 License
+## License
 
 Released under the [MIT License](LICENSE).
 
 ---
 
-## 👤 Author
+## Author
 
 **Ali Dere** — Self-taught full-stack developer
-📧 alidere752@gmail.com · 🐙 [github.com/Dere752](https://github.com/Dere752)
+Email: alidere752@gmail.com · GitHub: [github.com/Dere752](https://github.com/Dere752)
 
 <sub>Built as a personal project to learn full-stack engineering by shipping a complete, real-world product.</sub>
