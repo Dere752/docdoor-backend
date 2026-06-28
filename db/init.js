@@ -233,7 +233,7 @@ function initTables() {
   if (!adm) {
     db.prepare(`INSERT INTO admin_users (id,email,password_hash,name,role,permissions,created_at) VALUES (?,?,?,?,?,?,?)`)
       .run('ADM001','admin@docdoor.com',bcrypt.hashSync('DocDoor2026!',12),'DocDoor Admin','super_admin','["all"]',Date.now());
-    console.log('✓ Default admin: admin@docdoor.com / DocDoor2026!');
+    console.log('Default admin: admin@docdoor.com / DocDoor2026!');
   }
 
   // Seed settings
@@ -244,7 +244,7 @@ function initTables() {
   }
 
   save();
-  console.log('✓ All tables initialized');
+  console.log('All tables initialized');
 }
 
 module.exports = { getDb, waitForDb };

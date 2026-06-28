@@ -9,7 +9,7 @@ const router = express.Router();
 router.get('/', authMiddleware, (req, res) => {
   const db = getDb();
   let visits;
-  console.log(`📖 GET /visits — user: ${req.user.id}, role: ${req.user.role}`);
+  console.log(`GET /visits — user: ${req.user.id}, role: ${req.user.role}`);
   if (req.user.role === 'doctor') {
     visits = db.prepare('SELECT * FROM visits WHERE doc_id = ? ORDER BY created_at DESC').all(req.user.id);
   } else {
@@ -22,7 +22,7 @@ router.get('/', authMiddleware, (req, res) => {
 // GET /api/visits/pending — doctors see pending requests needing their approval
 router.get('/pending', authMiddleware, (req, res) => {
   const db = getDb();
-  console.log(`\n🔍 GET /pending — user: ${req.user.id}, role: ${req.user.role}`);
+  console.log(`\nGET /pending — user: ${req.user.id}, role: ${req.user.role}`);
   if (req.user.role !== 'doctor') return res.status(403).json({ error: 'Not a doctor' });
   
   // Debug: show all visits
@@ -64,7 +64,7 @@ router.post('/', authMiddleware, (req, res) => {
     // Ensure paymentMethod is a string (frontend may send object)
     const payStr = typeof paymentMethod === 'object' ? JSON.stringify(paymentMethod) : (paymentMethod || '');
 
-    console.log(`\n📋 ═══ NEW BOOKING ═══`);
+    console.log(`\n═══ NEW BOOKING ═══`);
     console.log(`   Patient ID: ${req.user.id}`);
     console.log(`   Doctor ID:  ${docId}`);
     console.log(`   DocName:    ${docName}`);
@@ -81,18 +81,18 @@ router.post('/', authMiddleware, (req, res) => {
       VALUES (?, ?, ?, ?, ?, ?, 'pending', ?, ?, ?, ?, ?, ?, ?, ?)
     `).run(id, req.user.id, docId || null, docName || '', docImg || '', docSpec || '', sym || '', date || '', time || '', address || '', payStr, price || 0, now, now);
 
-    console.log(`   ✓ Visit saved to DB`);
+    console.log(`   Visit saved to DB`);
 
     // Verify it was saved
     const visit = db.prepare('SELECT * FROM visits WHERE id = ?').get(id);
-    console.log(`   ✓ Visit verified: doc_id=${visit?.doc_id}, status=${visit?.status}`);
+    console.log(`   Visit verified: doc_id=${visit?.doc_id}, status=${visit?.status}`);
 
     // Create notification for the doctor
     if (docId) {
       const notifId = 'n' + Date.now().toString(36);
       db.prepare('INSERT INTO notifications (id, user_id, message, read, created_at) VALUES (?, ?, ?, 0, ?)')
         .run(notifId, docId, `New booking request from ${patientName}: ${sym || 'General visit'}`, now);
-      console.log(`   ✓ Notification created for doctor ${docId}`);
+      console.log(`   Notification created for doctor ${docId}`);
     }
 
     // Broadcast to doctor via WebSocket
@@ -104,11 +104,11 @@ router.post('/', authMiddleware, (req, res) => {
         visit: { ...formatVisit(visit), patientName },
       });
     }
-    console.log(`📋 ═══ BOOKING COMPLETE ═══\n`);
+    console.log(`═══ BOOKING COMPLETE ═══\n`);
 
     res.status(201).json({ visit: formatVisit(visit) });
   } catch(err) {
-    console.error('❌ BOOKING ERROR:', err);
+    console.error('BOOKING ERROR:', err);
     res.status(500).json({ error: 'Failed to create booking: ' + err.message });
   }
 });
@@ -151,7 +151,7 @@ router.post('/:id/accept', authMiddleware, (req, res) => {
 
   const now = Date.now();
   db.prepare("UPDATE visits SET status = 'upcoming', updated_at = ? WHERE id = ?").run(now, req.params.id);
-  console.log(`✅ Doctor ${req.user.id} ACCEPTED visit ${req.params.id} for patient ${visit.user_id}`);
+  console.log(`Doctor ${req.user.id} ACCEPTED visit ${req.params.id} for patient ${visit.user_id}`);
 
   // Get doctor name
   const doc = db.prepare('SELECT first_name, last_name FROM users WHERE id = ?').get(req.user.id);

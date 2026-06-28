@@ -14,14 +14,14 @@ function compileJSX() {
   const jsxPath = path.join(__dirname, 'public', 'app.jsx');
   const jsPath = path.join(__dirname, 'public', 'app.js');
   if (fs.existsSync(jsPath) && fs.existsSync(jsxPath)) {
-    if (fs.statSync(jsPath).mtimeMs > fs.statSync(jsxPath).mtimeMs) { console.log('✓ app.js up to date'); return; }
+    if (fs.statSync(jsPath).mtimeMs > fs.statSync(jsxPath).mtimeMs) { console.log('app.js up to date'); return; }
   }
-  console.log('⚙ Compiling app.jsx → app.js ...');
+  console.log('Compiling app.jsx → app.js ...');
   const babel = require('@babel/core');
   const jsx = fs.readFileSync(jsxPath, 'utf8');
   const result = babel.transformSync(jsx, { presets: [['@babel/preset-react', { runtime: 'classic' }]], filename: 'app.jsx' });
   fs.writeFileSync(jsPath, result.code, 'utf8');
-  console.log('✓ Compiled app.js (' + Math.round(result.code.length / 1024) + ' KB)');
+  console.log('Compiled app.js (' + Math.round(result.code.length / 1024) + ' KB)');
 }
 compileJSX();
 
@@ -136,7 +136,7 @@ waitForDb().then(() => {
   server.listen(PORT, () => {
     console.log(`
 ╔═══════════════════════════════════════════════════╗
-║  🩺 DocDoor Backend v2.0                          ║
+║  DocDoor Backend v2.0                          ║
 ║                                                   ║
 ║  App:      http://localhost:${PORT}                 ║
 ║  Admin:    http://localhost:${PORT}/admin            ║
